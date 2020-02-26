@@ -3,7 +3,7 @@ body {
 }
 
 p {
-    color: #A8A8A8;
+    color: rgb(219, 218, 218);
 }
 
 li {
@@ -16,7 +16,7 @@ a {
 }
 
 a:hover {
-    color: #EEF105;
+    color: rgb(211, 211, 211);
     text-decoration: none;
 }
 
@@ -35,38 +35,14 @@ a:hover {
     font-size: 0.8em;
 }
 
-
-/* .btn-block {
-    margin-top: .5rem;
-    width: 90%;
-    margin: 5px auto;
-    display: block;
-}
-
-.btn-block + .btn-block {
-    margin-top: .5rem;
-    width: 90%;
-    margin: 5px auto;
-}
-
-.btn-primary {
-    font-weight: 900;
-    color: #fff;
-    background-color: #05122B;
-    border-color: #05122B;
-}
-
-.btn-primary:hover {
-    color: #05122B;
-    background-color: #EEF105;
-    border-color: #EEF105;
-} */
-
-
-
 .btnDesign,
-.btnDesktop {
-    background-color: #05122B;
+.btnDesign2,
+.btnDesign3,
+.btnDesign4,
+.btnDesktop,
+.btnDesktop2,
+.btnDesktop3,
+.btnDesktop4 {
     border-radius: 10px;
     border: none;
     font-size: 1.3em;
@@ -74,8 +50,64 @@ a:hover {
     margin: 5px auto;
     display: block;
     width: 90%;
+
+}
+
+
+.btnDesktop {
+    background-color: #05122B;
     color: #FFF;
 }
+
+
+.btnDesign,
+.btnDesktop {
+    background-color: #24478F;
+    color: #FFF;
+}
+
+.btnDesign:hover,
+.btnDesktop:hover {
+    background-color: rgb(25, 51, 104);
+    color: #FFF;
+}
+
+.btnDesign2,
+.btnDesktop2 {
+    background-color: #CA000F;
+    color: #FFF;
+}
+
+.btnDesign2:hover,
+.btnDesktop2:hover {
+    background-color: rgb(158, 2, 13);
+    color: #FFF;
+}
+
+.btnDesign3,
+.btnDesktop3 {
+    background-color: #E28000;
+    color: #FFF;
+}
+
+.btnDesign3:hover,
+.btnDesktop3:hover {
+    background-color: rgb(199, 114, 3);
+    color: #FFF;
+}
+
+.btnDesign4,
+.btnDesktop4 {
+    background-color: #05122B;
+    color: #FFF;
+}
+
+.btnDesign4:hover,
+.btnDesktop4:hover {
+    background-color: rgb(4, 12, 26);
+    color: #FFF;
+}
+
 
 .btnSubscribe {
     background-color: #00E6C2;
@@ -89,18 +121,6 @@ a:hover {
     color: #05122B;
     text-transform: uppercase;
 }
-
-.btn-primary:hover {
-    background-color: #EEF105;
-    
-}
-
-.btn:hover {
-    background-color: #EEF105;
-    color: #05122B;
-    text-decoration: none;
-}
-
 
 .card-deck {
     width: 95%;
@@ -118,30 +138,56 @@ a:hover {
     padding: 1.25rem;
 }
 
+.card {
+    border: none;
+}
+
+
+
 .btnCard {
-    background-color: #EEF105;
+    background-color: #24478F;
+    color: #FFF;
     border: none;
     font-size: 1.1em;
     padding: 10px 20px;
     margin: auto;
     display: block;
-    color: #05122B;
     text-align: center;
 }
 
-.btnCard:hover {
-    color: rgb(0, 5, 14);
-}
-
-.card {
+.btnCard2 {
+    background-color: #CA000F;
+    color: #FFF;
     border: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: auto;
+    display: block;
+    text-align: center;
 }
 
-.eNewsIcon {    
-    /* width: 30px;
-    height: 30px; */
-    /* padding-left: 5px; */
+.btnCard3 {
+    background-color: #E28000;
+    color: #FFF;
+    border: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: auto;
+    display: block;
+    text-align: center;
 }
+
+.btnCard4 {
+    background-color: #05122B;
+    color: #FFF;
+    border: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: auto;
+    display: block;
+    text-align: center;
+}
+
 
 .eNewsText {
     font-size: 1.3em;
@@ -221,7 +267,10 @@ footer {
 
 @media (min-width: 1024px) {
 
-    .btnDesktop {
+    .btnDesktop,
+    .btnDesktop2,
+    .btnDesktop3,
+    .btnDesktop4 {
         display: inline;
         margin: auto;
         max-width: 24%;
