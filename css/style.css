@@ -213,11 +213,7 @@ img {
     display: none;
 }
 
-.eNewsIcon path {
-    stroke: #00E6C2;
-    fill: #00E6C2;
-    fill-rule: nonzero;
-}
+
 
 /* .eNewsIcon:hover path {
     stroke: #05122B;
