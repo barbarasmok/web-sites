@@ -110,16 +110,22 @@ a:hover {
 
 
 .btnSubscribe {
-    background-color: #00E6C2;
+    background-color: #CA000F;
     border-radius: 10px;
     border: none;
-    font-size: 1.3em;
-    padding: 20px 20px;
+    font-size: 1.5em;
+    padding: 15px 20px;
     margin: 5px auto;
     display: block;
     width: 90%;
-    color: #05122B;
+    color: white;
     text-transform: uppercase;
+    font-weight: 900;
+}
+
+.btnSubscribe:hover {
+    background-color: rgb(158, 2, 13);
+    color: #FFF;
 }
 
 .card-deck {
@@ -214,6 +220,11 @@ img {
 }
 
 
+svg {
+    overflow: hidden;
+    vertical-align: top;
+}
+
 
 /* .eNewsIcon:hover path {
     stroke: #05122B;
@@ -224,11 +235,12 @@ img {
 .footerText {
     color: white;
     font-weight: 900;
+    font-size: 1.2em;
 }
 
 footer {
     background-color: #05122B;
-    height: 60px;
+    height: 70px;
     margin: auto;
     text-align: center;
     padding: 20px;
