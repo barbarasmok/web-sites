@@ -75,9 +75,47 @@ a:hover {
     color: #FFF;
 }
 
+.btn-primary:hover {
+    background-color: #EEF105;
+    
+}
+
 .btn:hover {
     background-color: #EEF105;
     color: #05122B;
+    text-decoration: none;
+}
+
+.card-deck {
+    width: 90%;
+    margin: auto;
+    
+}
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 0;
+}
+
+.card-text {
+    padding: 1.25rem;
+}
+
+.btnCard {
+    background-color: #EEF105;
+    border: none;
+    font-size: 1.1em;
+    padding: 10px 20px;
+    margin: auto;
+    display: block;
+    color: #05122B;
+    text-align: center;
+}
+
+.card {
+    border: none;
 }
 
 
@@ -90,7 +128,7 @@ a:hover {
     }
 
     .links {
-        margin: auto 10px;
+        margin: auto 30px;
         text-align: center;
         display: flex;
         flex-wrap: wrap;
