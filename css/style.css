@@ -22,6 +22,7 @@ a:hover {
 
 .navbar {
     margin: auto;
+    justify-content: space-around;
 } 
 
 .title {
@@ -63,7 +64,8 @@ a:hover {
 
 
 
-.btnDesign {
+.btnDesign,
+.btnDesktop {
     background-color: #05122B;
     border-radius: 10px;
     border: none;
@@ -73,6 +75,19 @@ a:hover {
     display: block;
     width: 90%;
     color: #FFF;
+}
+
+.btnSubscribe {
+    background-color: #00E6C2;
+    border-radius: 10px;
+    border: none;
+    font-size: 1.3em;
+    padding: 10px 20px;
+    margin: 5px auto;
+    display: block;
+    width: 90%;
+    color: #05122B;
+    text-transform: uppercase;
 }
 
 .btn-primary:hover {
@@ -86,10 +101,10 @@ a:hover {
     text-decoration: none;
 }
 
+
 .card-deck {
-    width: 90%;
-    margin: auto;
-    
+    width: 95%;
+    margin: auto;  
 }
 
 .card-body {
@@ -114,10 +129,35 @@ a:hover {
     text-align: center;
 }
 
+.btnCard:hover {
+    color: rgb(0, 5, 14);
+}
+
 .card {
     border: none;
 }
 
+.eNewsIcon {    
+    /* width: 30px;
+    height: 30px; */
+    /* padding-left: 5px; */
+}
+
+.svg:hover {
+    background-color: #05122B;
+}
+
+.eNewsText {
+    font-size: 1.3em;
+}
+
+img {
+    vertical-align: -2px;
+}
+
+.desktopLinks {
+    display: none;
+}
 
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
@@ -127,7 +167,8 @@ a:hover {
         margin: auto 0;
     }
 
-    .links {
+    .links,
+    .footerLinks {
         margin: auto 30px;
         text-align: center;
         display: flex;
@@ -135,7 +176,8 @@ a:hover {
         justify-content: space-around;
     }
 
-    .col-md-6 {
+    .col-md-6,
+    .col-md-4 {
         padding-right: 0;
         padding-left: 0;
     }
@@ -143,5 +185,39 @@ a:hover {
     .navbar {
         justify-content: space-around;
     }
+
+    .card-deck {
+        width: 90%;
+    }
+
+    .card-text {
+        padding: 1rem;
+    }
     
+}
+
+@media (min-width: 1024px) {
+
+    .btnDesktop {
+        display: inline;
+        margin: auto;
+        max-width: 24%;
+        
+    } 
+    
+    .links {
+        display: none;
+    }
+
+    .desktopLinks {
+        margin: auto 45px;
+        text-align: center;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .btn-block+.btn-block {
+       margin-top: 0;
+    }
 }
