@@ -69,8 +69,8 @@ a:hover {
     background-color: #05122B;
     border-radius: 10px;
     border: none;
-    font-size: 1.1em;
-    padding: 10px 20px;
+    font-size: 1.3em;
+    padding: 15px 20px;
     margin: 5px auto;
     display: block;
     width: 90%;
@@ -82,7 +82,7 @@ a:hover {
     border-radius: 10px;
     border: none;
     font-size: 1.3em;
-    padding: 10px 20px;
+    padding: 20px 20px;
     margin: 5px auto;
     display: block;
     width: 90%;
@@ -143,10 +143,6 @@ a:hover {
     /* padding-left: 5px; */
 }
 
-.svg:hover {
-    background-color: #05122B;
-}
-
 .eNewsText {
     font-size: 1.3em;
 }
@@ -159,12 +155,39 @@ img {
     display: none;
 }
 
+.eNewsIcon path {
+    stroke: #00E6C2;
+    fill: #00E6C2;
+    fill-rule: nonzero;
+}
+
+/* .eNewsIcon:hover path {
+    stroke: #05122B;
+    fill: #05122B;
+    fill-rule: nonzero;
+} */
+
+.footerText {
+    color: white;
+    font-weight: 900;
+}
+
+footer {
+    background-color: #05122B;
+    height: 60px;
+    margin: auto;
+    text-align: center;
+    padding: 20px;
+    color: white;
+}
+
+
+
 /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) { 
 
     .btnDesign {
         display: inline-block;
-        margin: auto 0;
     }
 
     .links,
@@ -220,4 +243,9 @@ img {
     .btn-block+.btn-block {
        margin-top: 0;
     }
+}
+
+@media (min-width: 1200px) {
+
+
 }
