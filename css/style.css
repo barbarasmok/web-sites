@@ -125,6 +125,7 @@ a:hover {
 .card-deck {
     width: 95%;
     margin: auto;  
+    margin-bottom: 100px;
 }
 
 .card-body {
@@ -135,57 +136,68 @@ a:hover {
 }
 
 .card-text {
-    padding: 1.25rem;
+    padding: 0.5rem 1.25rem;
+    color: black;
 }
 
 .card {
     border: none;
 }
 
-
-
 .btnCard {
-    background-color: #24478F;
-    color: #FFF;
+    color: #24478F;
     border: none;
     font-size: 1.1em;
-    padding: 10px 20px;
+    padding: 20px 20px 5px;
     margin: auto;
     display: block;
-    text-align: center;
+    text-align: left;
+}
+
+.btnCard:hover {
+    color: rgb(25, 51, 104);
 }
 
 .btnCard2 {
-    background-color: #CA000F;
-    color: #FFF;
+    color: #CA000F;
     border: none;
     font-size: 1.1em;
-    padding: 10px 20px;
+    padding: 20px 20px 5px;
     margin: auto;
     display: block;
-    text-align: center;
+    text-align: left;
+}
+
+.btnCard2:hover {
+    color: rgb(158, 2, 13);
 }
 
 .btnCard3 {
-    background-color: #E28000;
-    color: #FFF;
+    color: #E28000;
     border: none;
     font-size: 1.1em;
-    padding: 10px 20px;
+    padding: 20px 20px 5px;
     margin: auto;
     display: block;
-    text-align: center;
+    text-align: left;
+}
+
+.btnCard3:hover {
+    color: rgb(199, 114, 3);
 }
 
 .btnCard4 {
-    background-color: #05122B;
-    color: #FFF;
+    color: #05122B;
     border: none;
     font-size: 1.1em;
-    padding: 10px 20px;
+    padding: 20px 20px 5px;
     margin: auto;
     display: block;
-    text-align: center;
+    text-align: left;
+}
+
+.btnCard4:hover {
+    color: rgb(4, 12, 26);
 }
 
 
