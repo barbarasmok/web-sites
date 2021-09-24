@@ -1,0 +1,90 @@
+{rw_newsite_conditional}
+
+	{exp:channel:entries channel="static_pages"}
+	
+	{embed="includes/_header" meta_title="{if meta_title}{meta_title}{if:else}{title}{/if}" meta_desc="{meta_description}" {if status == "closed"}ads="off"{/if}}{/exp:channel:entries}
+		<article class="full-article clearfix">
+			
+			<header>
+				
+				{exp:channel:entries channel="static_pages"}
+				
+				<h1>{headline}.</h1>
+				
+				{/exp:channel:entries}
+				
+			</header>
+			
+			<div class="article-main">
+				
+				<div class="article-content">
+					
+					{exp:channel:entries channel="static_pages"}
+						
+						{body}
+						
+					{/exp:channel:entries}
+				
+					<ul class="archive">
+					{exp:channel:entries channel="campaigns" dynamic="off" disable="member_data|trackbacks|pagination" orderby="date" sort="desc" status="open" show_future_entries="yes"}
+						<li><a href="{rw_newsletter_url}" target="_blank">{title}</a></li>
+					{/exp:channel:entries}
+					</ul>
+					
+				</div> <!-- /.article-content -->
+				
+			</div> <!-- /.article-main -->
+			
+			<div class="article-sidebar">
+				
+				{rw_sidekick}
+				{rw_bigbox}
+				{embed="includes/_footer" page_type="article"}
+
+{if:else}
+	
+	{embed="includes/_doc_header"}
+
+<body>
+	
+	{embed="includes/_login_bar"}
+	
+	<div class="container">
+		
+		{embed="includes/_header"}
+		
+		{embed="includes/_navigation"}
+		
+		<div class="content-wrapper">
+			
+			<div class="main-content">
+				
+				{exp:channel:entries channel="static_pages"}
+				
+				<h1 class="page-title">{headline}</h1>
+				
+				{body}
+				
+				{/exp:channel:entries}
+				
+				<ul class="archive">
+				{exp:channel:entries channel="campaigns" dynamic="off" disable="member_data|trackbacks|pagination" orderby="date" sort="desc" status="open" show_future_entries="yes"}
+					<li><a href="{rw_newsletter_url}" target="_blank">{title}</a></li>
+				{/exp:channel:entries}
+				</ul>
+
+			</div>
+			
+			{embed="includes/_secondary_content"}
+			
+		</div>
+		
+		{embed="includes/_footer"}
+		
+	</div>
+	
+</body>
+
+</html>
+	
+{/if}

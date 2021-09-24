@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>KootenayBiz Enewsletter Archive</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" media="all" href="{stylesheet='enewsletterarchive/enewsletter_archive_css'}">
+<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100|Lato:300,400,700,900,400italic" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<style>
+body {
+    font-family: 'Lato', 'sans-serif';
+}
+
+li {
+    text-decoration: none;
+}
+a {
+    text-decoration: none;
+    color: #05112A;
+}
+a:hover {
+    color: rgb(211, 211, 211);
+    text-decoration: none;
+}
+.navbar {
+    margin: auto;
+    justify-content: space-around;
+}
+.btn1,
+.btn2,
+.btn3 {
+    font-size: 1.3em;
+    padding: 10px;
+    margin: 5px auto;
+    display: flex;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn1 {
+    background-color: #082972;
+    color: #FFF;
+}
+.btn1:hover {
+    background-color: #051D51;
+    color: #FFF;
+}
+.btn2 {
+    background-color: #FF270A;
+    color: #FFF;
+}
+.btn2:hover {
+    background-color: #C30101;
+    color: #FFF;
+}
+.btn3 {
+    background-color: #3E71E2;
+    color: #FFF;
+}
+.btn3:hover {
+    background-color: #2556C1;
+    color: #FFF;
+}
+.btn4 {
+    font-size: 1.3em;
+    padding: 10px;
+    margin: 5px auto;
+    display: inline;
+    font-weight: 900;
+    align-items: center;
+    justify-content: center;
+    background-color: #05112A;
+    color: #FFF;
+}
+
+img {
+    vertical-align: -2px;
+}
+
+.footerText {
+    color: white;
+    font-weight: 900;
+    font-size: 1.2em;
+}
+footer {
+    background-color: #082972;
+    margin: auto;
+    text-align: center;
+    padding: 10px;
+    color: white;
+    position: sticky;
+}
+
+</style>
+
+<body>
+    <!-- NAV -->
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="https://kootenaybiz.com/">
+            <img src="https://kootenaybiz.com/images/article_photos/_thumbs/kb_icon.png" height="30px" class="align-top w-15 mr-2" alt=""><span class="font-weight-bold">KootenayBiz</span>&nbsp;&nbsp;&nbsp;<span class="subheadline">Newsletter Archive</span>
+        </a>    
+    </nav> 
+
+    <div class="content_wrapper">
+        <div class="blurb">
+            <div class="title">
+                <h1 class="mt-3 font-weight-bold">KootenayBiz Campaigns</h1>
+            </div>
+            <div class="paragraph">
+                <p>
+                    Our monthly eNewsletter is designed to keep readers up to date with what’s happening in the world of Kootenay businesses; we feature articles on local companies, highlight upcoming events and more.
+                </p>
+            </div>
+        </div>
+        <hr>
+        <div class="campaign_list">
+            <ul>
+                {exp:channel:entries channel="campaigns" dynamic="off" disable="member_data|trackbacks|pagination" orderby="date" sort="desc" status="open"}
+                <li>
+                        <p>{title}</p>
+                        <a href="{kb_newsletter_url}">READ</a>
+                    </li>
+                {/exp:channel:entries}
+            </ul>
+        </div>
+    </div>
+
+    <div class="container my-4">
+        <div class="row mx-auto text-center">
+            <div class="col-md-6 mx-auto text-center"> 
+                <a class="btn btn-lg btn-block btn2" href="https://kootenaybiz.com/subscribe">Sign up to the FREE KootenayBiz newsletter&nbsp;
+                    <svg xmlns="http://www.w3.org/2000/svg" width="38" height="17" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M28.354 10.589c.084 0 .209-.041.251-.122L36.956 0h-22.8l8.477 10.589h5.721zm1.127.528c-.251.325-.668.527-1.127.527h-5.053L27.602 17H38V.487l-8.519 10.63zM11.525.041H0l1.044 1.298h11.525zm3.132 3.895H3.132l1.044 1.298h11.525zm3.09 3.935H6.264l1.044 1.298h11.484zm3.132 3.936H9.396l1.044 1.298h11.484zm-8.352 3.895L13.571 17h11.484l-1.044-1.298z"/></svg>
+                </a>
+            </div>
+            <div class="col-md-6 mx-auto text-center"> 
+                <a class="btn btn-lg btn-block btn3" href="https://kootenaybiz.com/share">Share your story with KootenayBiz</a>
+            </div>
+        </div>
+        <div class="row mx-auto text-center">
+            <div class="col-md-6 mx-auto text-center"> 
+                <a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/communities"><strong>Communities</strong></a>
+                <a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/features"><strong>Features</strong></a>
+                <a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/the-lists"><strong>The Lists</strong></a>  
+            </div>
+            <div class="col-md-6 mx-auto text-center"> 
+                <a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/blog"><strong>Blogs &amp; Columns</strong></a>
+                <a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/events"><strong>Events</strong></a>
+            </div>
+        </div>
+    </div>
+	<!-- Footer -->
+	<div class="container text-left my-3" style="font-size:13px;color:black;">
+        <div class="mx-3 mt-5">
+		    <p>Remember, this newsletter is designed to keep you informed about business news and developments in the Kootenays. If you enjoyed it, invite a friend to subscribe!</p>
+            <p>KootenayBiz.com is owned and operated by KPI Media Inc. We highlight business news and trends in the Kootenay and Boundary regions of British Columbia. ©2021 KPI Media Inc. All Rights Reserved.</p>
+            <p>To help us fulfill your request to receive information from snoriderswest.com via e-mail, please add <a href="mailto:distribution@kpimedia.com">distribution@kpimedia.com</a> to your Address Book or Safe List. Not interested in receiving this newsletter anymore? Click here to unsubscribe.</p>
+	    </div>
+    </div>
+
+	<footer class="mt-5">
+		<a href="https://kootenaybiz.com/" class="footerText">kootenaybiz.com</a>
+	</footer>
+
+
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="js/jQuery-3.4.1.js"></script>    
+	<script src="js/main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>

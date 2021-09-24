@@ -1,0 +1,79 @@
+{sr_newsite_conditional}
+
+	{exp:channel:entries channel="static_pages" url_title="{segment_1}" dynamic="off" limit="1" diasable="member_data|trackbacks|pagination" cache="yes" refresh="30"}
+
+		{embed="includes/_header" meta_title="{meta_title}" meta_desc="{meta_description}"}
+		
+		<section class="landing-head" role="heading">
+			<div class="headline">
+				<h1 class="page-title">{static_headline}</h1>
+				<h2>{article_subheadline}</h2>
+			</div>
+		</section>
+		
+		<section class="landing-main" id="main" role="main">
+		
+			{static_body}
+			
+	{/exp:channel:entries}
+			
+			<ul>
+				{exp:channel:entries channel="campaigns" dynamic="off" disable="member_data|trackbacks|pagination" orderby="date" sort="desc" status="open"}
+					<li><a href="{sr_newsletter_url}" target="_blank">{title}</a></li>
+				{/exp:channel:entries}
+			</ul>
+		
+		</section>
+	
+	<section class="landing-sidebar" role="complementary">
+		
+		{sr_share_photos}
+		{sr_sidebar_subscribe}
+		{sr_sidekick}
+		{sr_sidebar_events}
+		{sr_sidebar_contests}
+		{sr_quicklinks}
+		{sr_bigbox}
+			
+	{embed="includes/_footer"}
+
+{if:else}
+
+{exp:stash:set parse_tags="yes"}
+	{exp:channel:entries channel="static_pages" url_title="{segment_1}" dynamic="off" disable="member_data|trackbacks|pagination"}
+		{stash:title}{static_headline}{/stash:title}
+		{stash:body}{static_body}{/stash:body}
+		{stash:breadcrumb}{sr_breadcrumb}{/stash:breadcrumb}
+		{stash:meta_title}{if meta_title}{meta_title}{if:else}{title}{/if}{/stash:meta_title}
+		{stash:meta_description}{meta_description}{/stash:meta_description}
+	{/exp:channel:entries}
+{/exp:stash:set}
+
+{embed="_includes/_doc_header" meta_title="{exp:stash:get name="meta_title"}" meta_description="{exp:stash:get name="meta_description"}"}
+<body>
+	<div class="container">
+		{embed="_includes/_header"}
+			<div class="row">
+				<div class="span8">
+					<div class="landing-header">
+						<h1>{exp:stash:get name="title"}</h1>
+						{exp:stash:get name="body"}
+					</div> <!-- /landing-header -->
+
+					<ul>
+					{exp:channel:entries channel="campaigns" dynamic="off" disable="member_data|trackbacks|pagination" orderby="date" sort="desc" status="open"}
+						<li><a href="{sr_newsletter_url}" target="_blank">{title}</a></li>
+					{/exp:channel:entries}
+					</ul>
+				</div><!-- ##span8 -->
+
+				<div class="span4">
+					{embed="_includes/_secondary_content"}
+				</div> <!-- ##span4 -->
+			</div>
+	{embed="_includes/_footer"}
+	</div>
+</body>
+</html>
+
+{/if}
