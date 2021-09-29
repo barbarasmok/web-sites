@@ -94,7 +94,7 @@ footer {
     <!-- NAV -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="https://KootenayBiz.com/">
-            <img src="images/icons/sr-logo.svg" class="align-top w-15 mr-2" alt=""><span class="font-weight-bold">KootenayBiz</span>&nbsp;&nbsp;&nbsp;<span class="subheadline">#kootenaybiz</span>
+            <img kbc="images/icons/kb-logo.svg" class="align-top w-15 mr-2" alt=""><span class="font-weight-bold">KootenayBiz</span>&nbsp;&nbsp;&nbsp;<span class="subheadline">#kootenaybiz</span>
         </a>    
     </nav> 
     <!-- /NAV -->
@@ -103,9 +103,57 @@ footer {
     <div class="container my-5">
         <div class="row mx-auto text-center">
             <div class="col-md-6 mx-auto text-center"> 
-                <a class="btn btn-lg btn-block btn2" href="https://KootenayBiz.com/subscribe">Sign up to the FREE KootenayBiz newsletter&nbsp;
+                <a class="btn btn-lg btn-block btn2" href="https://kbwest.com/subscribe">Sign up to the FREE KootenayBiz newsletter&nbsp;
                     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="17" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M28.354 10.589c.084 0 .209-.041.251-.122L36.956 0h-22.8l8.477 10.589h5.721zm1.127.528c-.251.325-.668.527-1.127.527h-5.053L27.602 17H38V.487l-8.519 10.63zM11.525.041H0l1.044 1.298h11.525zm3.132 3.895H3.132l1.044 1.298h11.525zm3.09 3.935H6.264l1.044 1.298h11.484zm3.132 3.936H9.396l1.044 1.298h11.484zm-8.352 3.895L13.571 17h11.484l-1.044-1.298z"/></svg>
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4 mb-0 mx-auto">
+        <div class="row mx-auto text-center d-flex justify-content-center">
+            <div class="col-12 col-md-4 mx-auto">
+                {if embed:city == "y"}
+                {/if}
+                {exp:channel:entries
+                    channel="{embed:stream_channels}"
+                    limit="3"
+                    orderby="date" dynamic="off" offset="1" sticky="no"
+                    {if embed:stream_categories}category="{embed:stream_categories}"{/if}
+                    {if embed:author_search}search:writer="{embed:author_search}"{/if}
+                    {if embed:limit}limit="{embed:limit}"{/if}
+                    {if embed:sticky == "n"}sticky="no" {/if}
+                    {if embed:current_id}entry_id="not {embed:current_id}"{/if}
+                    paginate="bottom"
+                    paginate_base="paginate/index"
+                    disable="member_data|trackbacks"}          
+                   <div class="my-2 item {if {kb_channel_conditionals_brag}}brag{if:elseif {kb_channel_conditionals_gear}}gear{if:elseif {kb_channel_conditionals_read}}read{if:elseif {kb_channel_conditionals_ride}}ride{/if}">
+                        {if article_photo_matrix}
+                            {article_photo_matrix search:position="0" limit="1"}{if photo_thumb}
+                                <div class="graphic">
+                                    <a href="{kb_article_link}"><img kbc="{photo_thumb}" class="w-75 mx-auto" alt="{alt}"></a>
+                                </div>
+                                {if:elseif photo_alt}
+                                <div class="graphic">
+                                    <a href="{kb_article_link}"><img kbc="{photo_alt}" alt="{alt}"></a>
+                                </div>
+                        {/if}{/article_photo_matrix}
+                
+                        <div class="my-2 text">
+			                <span class="categories"><a href="{/category_url_title}">{/categories}</a></span> 
+                            <h2 style="font-size:24px; font-weight:900;" class="mt-2 mb-5"><a class="title" href="{kb_generate_url}">{title}</a></h2>
+                        </div>
+
+                    </div>
+                {/exp:channel:entries}
+            </div>
+        
+        </div>
+    </div>          
+
+    <div class="container my-5">
+        <div class="row mx-auto text-center">
+                <div class="col-md-6 mx-auto text-center"> 
                 <a class="btn btn-lg btn-block btn3" href="https://KootenayBiz.com/share">Share your story with KootenayBiz</a>
                 <a class="btn btn-lg btn-block btn1" href="https://KootenayBiz.com/communities"><strong>Communities</strong></a>
                 <a class="btn btn-lg btn-block btn1" href="https://KootenayBiz.com/features"><strong>Features</strong></a>  
@@ -113,7 +161,6 @@ footer {
                 <a class="btn btn-lg btn-block btn1" href="https://KootenayBiz.com/blogs"><strong>Blogs &amp; Column</strong></a>
                 <a class="btn btn-lg btn-block btn1" href="https://KootenayBiz.com/events"><strong>Events</strong></a>
             </div>
-        </div>
         </div>
     </div>
 
@@ -124,9 +171,9 @@ footer {
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="js/jQuery-3.4.1.js"></script>    
-    <script src="js/main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script kbc="js/jQuery-3.4.1.js"></script>    
+    <script kbc="js/main.js"></script>
+    <script kbc="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQkbvoxMfooAo" crossorigin="anonymous"></script>
+    <script kbc="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>

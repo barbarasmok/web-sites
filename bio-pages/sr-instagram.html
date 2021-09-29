@@ -110,113 +110,35 @@ footer {
         </div>
     </div>
 
-    <div class="container my-5">
-        <div class="row mx-auto text-center">
-            <div class="col-md-4">
+    <div class="container my-5 mx-auto">
+        <div class="row mx-auto text-center d-flex justify-content-center">
+            <div class="col-12 col-md-4">
                 {if embed:city == "y"}
                 {/if}
-                {exp:channel:entries 
-                    channel="{embed:stream_channels}" 
-                    limit="1"
-                    dynamic="no"
-                    {if embed:stream_categories}category="{embed:stream_categories}"{/if} 
-                    {if embed:author_search}search:writer="{embed:author_search}"{/if} 
-                    {if embed:limit}limit="{embed:limit}"{/if} 
+                {exp:channel:entries
+                    channel="{embed:stream_channels}"
+                    limit="3"
+                    orderby="date" dynamic="off" offset="1" sticky="no"
+                    {if embed:stream_categories}category="{embed:stream_categories}"{/if}
+                    {if embed:author_search}search:writer="{embed:author_search}"{/if}
+                    {if embed:limit}limit="{embed:limit}"{/if}
                     {if embed:sticky == "n"}sticky="no" {/if}
                     {if embed:current_id}entry_id="not {embed:current_id}"{/if}
-                    paginate="bottom" 
+                    paginate="bottom"
                     paginate_base="paginate/index"
-                    disable="member_data|trackbacks"}           
+                    disable="member_data|trackbacks"}          
                     <div class="my-2 item {if {sr_channel_conditionals_brag}}brag{if:elseif {sr_channel_conditionals_gear}}gear{if:elseif {sr_channel_conditionals_read}}read{if:elseif {sr_channel_conditionals_ride}}ride{/if}">
                         {if landing_photo}
                             {landing_photo search:position="0" limit="1"}{if thumb}
                                 <div class="graphic">
-                                    <a href="{sr_article_link}"><img src="{thumb}" alt="{alt}"></a>
+                                    <a href="{sr_article_link}"><img src="{thumb}" class="w-75 mx-auto" alt="{alt}"></a>
                                 </div>
                                 {if:elseif photo}
                                 <div class="graphic">
                                     <a href="{sr_article_link}"><img src="{photo}" alt="{alt}"></a>
                                 </div>
                         {/if}{/landing_photo}
-                    
-                        {if:elseif gearboxx_thumb}
-                            <div class="graphic">
-                                <a href="{sr_article_link}"><img src="{gearboxx_thumb}" alt="Thumbnail"></a>
-                            </div>
-                        {/if}
-                        <div class="my-2 text">
-                            <span class="categories">{sr_categories}</span>
-                            <h2 style="font-size:24px; font-weight:900;" class="mt-2 mb-5"><a class="title" href="{sr_article_link}">{title}</a></h2>
-                        </div>
-                    </div>
-                {/exp:channel:entries}
-            </div>
-            <div class="col-md-4">
-                {if embed:city == "y"}
-                {/if}
-                {exp:channel:entries 
-                    channel="{embed:stream_channels}" 
-                    limit="1"
-                    dynamic="no"
-                    {if embed:stream_categories}category="{embed:stream_categories}"{/if} 
-                    {if embed:author_search}search:writer="{embed:author_search}"{/if} 
-                    {if embed:limit}limit="{embed:limit}"{/if} 
-                    {if embed:sticky == "n"}sticky="no" {/if}
-                    {if embed:current_id}entry_id="not {embed:current_id}"{/if}
-                    paginate="bottom" 
-                    paginate_base="paginate/index"
-                    disable="member_data|trackbacks"}           
-                    <div class="my-2 item {if {sr_channel_conditionals_brag}}brag{if:elseif {sr_channel_conditionals_gear}}gear{if:elseif {sr_channel_conditionals_read}}read{if:elseif {sr_channel_conditionals_ride}}ride{/if}">
-                        {if landing_photo}
-                            {landing_photo search:position="0" limit="1"}{if thumb}
-                                <div class="graphic">
-                                    <a href="{sr_article_link}"><img src="{thumb}" alt="{alt}"></a>
-                                </div>
-                                {if:elseif photo}
-                                <div class="graphic">
-                                    <a href="{sr_article_link}"><img src="{photo}" alt="{alt}"></a>
-                                </div>
-                        {/if}{/landing_photo}
-                        
-                        {if:elseif gearboxx_thumb}
-                            <div class="graphic">
-                                <a href="{sr_article_link}"><img src="{gearboxx_thumb}" alt="Thumbnail"></a>
-                            </div>
-                        {/if}
-                        <div class="my-2 text">
-                            <span class="categories">{sr_categories}</span>
-                            <h2 style="font-size:24px; font-weight:900;" class="mt-2 mb-5"><a class="title" href="{sr_article_link}">{title}</a></h2>
-                        </div>
-                    </div>
-                {/exp:channel:entries}
-            </div>
-            <div class="col-md-4">
-                {if embed:city == "y"}
-                {/if}
-                {exp:channel:entries 
-                    channel="{embed:stream_channels}" 
-                    limit="1"
-                    dynamic="no"
-                    {if embed:stream_categories}category="{embed:stream_categories}"{/if} 
-                    {if embed:author_search}search:writer="{embed:author_search}"{/if} 
-                    {if embed:limit}limit="{embed:limit}"{/if} 
-                    {if embed:sticky == "n"}sticky="no" {/if}
-                    {if embed:current_id}entry_id="not {embed:current_id}"{/if}
-                    paginate="bottom" 
-                    paginate_base="paginate/index"
-                    disable="member_data|trackbacks"}           
-                    <div class="my-2 item {if {sr_channel_conditionals_brag}}brag{if:elseif {sr_channel_conditionals_gear}}gear{if:elseif {sr_channel_conditionals_read}}read{if:elseif {sr_channel_conditionals_ride}}ride{/if}">
-                        {if landing_photo}
-                            {landing_photo search:position="0" limit="1"}{if thumb}
-                                <div class="graphic">
-                                    <a href="{sr_article_link}"><img src="{thumb}" alt="{alt}"></a>
-                                </div>
-                                {if:elseif photo}
-                                <div class="graphic">
-                                    <a href="{sr_article_link}"><img src="{photo}" alt="{alt}"></a>
-                                </div>
-                        {/if}{/landing_photo}
-                        
+                
                         {if:elseif gearboxx_thumb}
                             <div class="graphic">
                                 <a href="{sr_article_link}"><img src="{gearboxx_thumb}" alt="Thumbnail"></a>
@@ -230,7 +152,7 @@ footer {
                 {/exp:channel:entries}
             </div>
         </div>
-    </div>            
+    </div>          
 
     <div class="container my-5">
         <div class="row mx-auto text-center">

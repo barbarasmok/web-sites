@@ -106,6 +106,60 @@ footer {
                 <a class="btn btn-lg btn-block btn2" href="https://rvwest.com/subscribe">Sign up to the FREE RVwest newsletter&nbsp;
                     <svg xmlns="http://www.w3.org/2000/svg" width="38" height="17" fill="#fff" xmlns:v="https://vecta.io/nano"><path d="M28.354 10.589c.084 0 .209-.041.251-.122L36.956 0h-22.8l8.477 10.589h5.721zm1.127.528c-.251.325-.668.527-1.127.527h-5.053L27.602 17H38V.487l-8.519 10.63zM11.525.041H0l1.044 1.298h11.525zm3.132 3.895H3.132l1.044 1.298h11.525zm3.09 3.935H6.264l1.044 1.298h11.484zm3.132 3.936H9.396l1.044 1.298h11.484zm-8.352 3.895L13.571 17h11.484l-1.044-1.298z"/></svg>
                 </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-4 mb-0 mx-auto">
+        <div class="row mx-auto text-center d-flex justify-content-center">
+            <div class="col-12 col-md-4 mx-auto">
+                {if embed:city == "y"}
+                {/if}
+                {exp:channel:entries
+                    channel="{embed:stream_channels}"
+                    limit="3"
+                    orderby="date" dynamic="off" offset="1" sticky="no"
+                    {if embed:stream_categories}category="{embed:stream_categories}"{/if}
+                    {if embed:author_search}search:writer="{embed:author_search}"{/if}
+                    {if embed:limit}limit="{embed:limit}"{/if}
+                    {if embed:sticky == "n"}sticky="no" {/if}
+                    {if embed:current_id}entry_id="not {embed:current_id}"{/if}
+                    paginate="bottom"
+                    paginate_base="paginate/index"
+                    disable="member_data|trackbacks"}          
+                    <div class="my-2 item {if {sr_channel_conditionals_brag}}brag{if:elseif {sr_channel_conditionals_gear}}gear{if:elseif {sr_channel_conditionals_read}}read{if:elseif {sr_channel_conditionals_ride}}ride{/if}">
+                        {if global_photo}
+                            {global_photo search:position="0" limit="1"}{if thumb}
+                                <div class="graphic">
+                                    <a href="{sr_article_link}"><img src="{thumb}" class="w-75 mx-auto" alt="{alt}"></a>
+                                </div>
+                                {if:elseif photo}
+                                <div class="graphic">
+                                    <a href="{sr_article_link}"><img src="{photo}" alt="{alt}"></a>
+                                </div>
+                        {/if}{/global_photo}
+                
+                        {if:elseif gearboxx_thumb}
+                            <div class="graphic">
+                                <a href="{sr_article_link}"><img src="{gearboxx_thumb}" alt="Thumbnail"></a>
+                            </div>
+                        {/if}
+                        <div class="my-2 text">
+				        <span class="cat"><a href="{path="/gallery"}">{channel}</a></span> 
+                            <h2 style="font-size:24px; font-weight:900;" class="mt-2 mb-5"><a class="title" href="{sr_article_link}">{title}</a></h2>
+                        </div>
+
+                    </div>
+                {/exp:channel:entries}
+            </div>
+        
+        </div>
+    </div> 
+         
+
+    <div class="container my-5">
+        <div class="row mx-auto text-center">
+                <div class="col-md-6 mx-auto text-center"> 
                 <a class="btn btn-lg btn-block btn3" href="https://rvwest.com/share">Share your story with RVwest</a>
                 <a class="btn btn-lg btn-block btn1" href="https://rvwest.com/stories"><strong>Stories</strong></a>
                 <a class="btn btn-lg btn-block btn1" href="https://rvwest.com/travel"><strong>Travel</strong></a>  
@@ -113,8 +167,8 @@ footer {
                 <a class="btn btn-lg btn-block btn1" href="https://rvwest.com/events"><strong>Events</strong></a>
             </div>
         </div>
-        </div>
     </div>
+
 
     <!-- Footer -->
     <footer class="fixed-bottom">
