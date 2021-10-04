@@ -121,6 +121,46 @@ footer {
     color: white;
     position: sticky;
 }
+
+.submit {
+	font-size: 16px;
+	padding: 5px;
+	margin: 10px auto;
+	float:left;
+	width: 20%;
+	display: block;
+	border-radius: 5px;
+	font-weight: 900;
+	align-items: center;
+	justify-content: center;
+	background-color: #532A5B;
+	color: #FFF;
+	border: none;
+}
+.submit:hover {
+	background-color: #280D2E;
+	color: #FFF;
+}
+
+.contact-form .form-group .submit {
+	font-size: 16px;
+	padding: 5px;
+	margin: 10px auto;
+	float:left;
+	width: 20%;
+	display: block;
+	border-radius: 5px;
+	font-weight: 900;
+	align-items: center;
+	justify-content: center;
+	background-color: #532A5B;
+	color: #FFF;
+	border: none;
+}
+.contact-form .form-group .submit:hover {
+	background-color: #280D2E;
+	color: #FFF;
+}
 </style>
 
 <body data-offset="200" data-spy="scroll" data-target=".ownavigation">
@@ -145,9 +185,14 @@ footer {
 			<div class="container-fluid px-0 page-content blog-single cover-fullwidth" style="padding-bottom: 0;">
 
 				<div class="jumbotron text-center py-5" style="background-image: url(images/rv-banner.png); height: 450px; border-radius: 0;">
-					<h1 class="display-4 text-white font-weight-bold col-12 col-md-6 mx-auto mt-5">Keep up-to-date with RVwest</h1>
+					<h1 class="display-4 text-white font-weight-bold col-12 col-md-6 mx-auto mt-4">Keep up-to-date with RVwest</h1>
 					<p class="lead text-white col-12 col-md-6 mx-auto" style="line-height: 1.6; font-weight: bold;">Fill out our handy form and subscribe to the RVwest Newsletter - full of travel tips and camping hacks, RVing stories, recipes and other articles pertaining to the RV lifestyle.</p>
-				  </div>
+					<div class="row mx-auto text-center">
+						<div class="col-12 col-md-4 mx-auto text-center mb-5">
+							<a id="btn_submit" name="submit" style="width: 100%; font-size:18px;" href="#signup" class="submit py-2 my-0">Sign up for the FREE RVwest newsletter</a>
+						</div>
+					</div>
+				</div>
 
 				<!-- two columns -->
 				<div class="container my-5 mx-auto px-0">
@@ -162,75 +207,7 @@ footer {
 						</div>
 					</div>
 				</div>		
-
-				<!-- Subscribe form -->
-                <style>
-                    .contact-form .form-group .submit {
-                        font-size: 16px;
-                        padding: 5px;
-                        margin: 10px auto;
-                        float:left;
-                        width: 20%;
-                        display: block;
-                        border-radius: 5px;
-                        font-weight: 900;
-                        align-items: center;
-                        justify-content: center;
-                        background-color: #532A5B;
-                        color: #FFF;
-                        border: none;
-                    }
-                    .contact-form .form-group .submit:hover {
-                        background-color: #280D2E;
-                        color: #FFF;
-                    }
-                </style>
             
-				<div class="container my-5 mx-auto px-0">
-					<div class="contact-form col-12 col-md-8 mx-auto" style="background-color: #f7f7f7;">
-						<div class="row">
-							<div class="col-12 col-md-12 col-sm-6 mt-4 px-5">
-								<h3 class="entry-title-lg uppercase mb-1 mt-4 font-weight-bold text-center col-12 col-md-9 mx-auto" style="font-size: 30px;">THE PERFECT NEWSLETTER FOR RVING LOVERS</h3>
-								<form class="py-4">
-									<div class="row">
-										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="Your Name" name="contact-name" id="input_name" required>
-										</div>
-										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="Your Email" name="contact-email" id="input_email" required>
-										</div>
-									</div>
-									<div class="row">
-										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="Where do you live?" name="contact-name" id="input_name" required>
-										</div>
-										<div class="form-group col-md-6">
-											<button id="btn_submit" name="submit" style="width: 100%;" class="submit py-2 my-0">Send</button>
-										</div>
-									</div>
-									<div class="row mx-auto text-center d-flex justify-content-center mt-3">
-										<div class="form-check col-md-3">
-											<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											<label class="form-check-label" style="padding-left: 0;" for="flexCheckDefault">
-											East Kootenay
-											</label>
-										</div>
-										<div class="form-check col-md-3">
-											<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											<label class="form-check-label" style="padding-left: 0;" for="flexCheckDefault">
-											West Kootenay
-											</label>
-										</div>
-									</div>
-										<p class="text-center mt-3">I will never share your email address and you can unsubscribe in a single click.</p>
-									</div>
-								</form>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- /Subscribe form -->
-
 				<!-- TARGETTED -->
 				<div class="container my-5 mx-auto px-0">
 					<div class="row mx-auto justify-content-center d-flex">
@@ -238,7 +215,7 @@ footer {
 							<img  class="col-12 col-md-12" src="images/rv-image.png">
 						</div>
 						<div class="col-12 col-md-4 my-5">
-							<h3 class="font-weight-bold mb-3">TARGETTED TO YOU</h3>
+							<h3 class="font-weight-bold mb-3 mt-4">TARGETTED TO YOU</h3>
 							<p style="line-height: 1.6; font-size: 15px;">Each newsletter is streamlined to share only the most interesting articles once a month. We won't spam your inbox, and email addresses are never sold to a third party.</p>
 							<p style="line-height: 1.6; font-size: 15px;">We will entertain you with relevant information about the joys and challenges of RVing.</p>
 						</div>
@@ -250,30 +227,9 @@ footer {
 				<div class="container my-5 mx-auto px-0">
 					<h3 class="font-weight-bold mt-5  mb-3 text-center">A GLENTE REMINDER</h3>
 					<p style="line-height: 1.6; font-size: 15px;" class="col-lg-8 col-12 text-center mx-auto">Our subscribers get to be part of the RVwest family, and we invite you to share your own camping photos and stories. Know a fellow RVing lover who you think would appreciate getting this content? Please forward this page to them so they can subscribe to the <strong>RVwest Newsletter.</strong></p>
-					<div class="row mx-auto justify-content-center d-flex">
-						<div class="col-12 col-md-4 mt-3">
-							<ul>
-								<li style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-								<li style="font-size: 15px;">Aenean mollis dui quis lacus maximus, eget auctor nisl ullamcorper.</li>
-								<li style="font-size: 15px;">Ut id magna vestibulum, dignissim libero pretium, tincidunt sem.</li>
-								<li style="font-size: 15px;">Donec volutpat mi at dolor ultricies, ac tempus dui mattis.</li>
-								<li style="font-size: 15px;">Phasellus tristique erat quis elit rhoncus, rhoncus placerat ante porttitor.</li>
-							</ul>
-						</div>
-						<div class="col-12 col-md-4 mt-3">
-							<ul>
-								<li style="font-size: 15px;">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-								<li style="font-size: 15px;">Aenean mollis dui quis lacus maximus, eget auctor nisl ullamcorper.</li>
-								<li style="font-size: 15px;">Ut id magna vestibulum, dignissim libero pretium, tincidunt sem.</li>
-								<li style="font-size: 15px;">Donec volutpat mi at dolor ultricies, ac tempus dui mattis.</li>
-								<li style="font-size: 15px;">Phasellus tristique erat quis elit rhoncus, rhoncus placerat ante porttitor.</li>
-							</ul>
-						</div>
-					</div>
 				</div>	
 
-				<!-- Subscribe form -->
-				<div class="container my-5 mx-auto px-0">
+				<div class="container my-5 mx-auto px-0" id="signup">
 					<div class="contact-form col-12 col-md-8 mx-auto" style="background-color: #f7f7f7;">
 						<div class="row">
 							<div class="col-12 col-md-12 col-sm-6 mt-4 px-5">
@@ -289,24 +245,16 @@ footer {
 									</div>
 									<div class="row">
 										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="Where do you live?" name="contact-name" id="input_name" required>
+											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="What city do you live in?" name="contact-name" id="input_name" required>
 										</div>
 										<div class="form-group col-md-6">
-											<button id="btn_submit" name="submit" style="width: 100%;" class="submit py-2 my-0">Send</button>
+											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="What’s your  postal code/zip code?" name="contact-name" id="input_name" required>
 										</div>
+										
 									</div>
-									<div class="row mx-auto text-center d-flex justify-content-center mt-3">
-										<div class="form-check col-md-3">
-											<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											<label class="form-check-label" style="padding-left: 0;" for="flexCheckDefault">
-											East Kootenay
-											</label>
-										</div>
-										<div class="form-check col-md-3">
-											<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											<label class="form-check-label" style="padding-left: 0;" for="flexCheckDefault">
-											West Kootenay
-											</label>
+									<div class="row mx-auto text-center">
+										<div class="form-group col-md-6 mx-auto text-center">
+											<button id="btn_submit" name="submit" style="width: 100%;" class="submit py-2 my-0">Sign up to RVwest</button>
 										</div>
 									</div>
 										<p class="text-center mt-3">I will never share your email address and you can unsubscribe in a single click.</p>
