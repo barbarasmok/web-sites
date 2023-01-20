@@ -16,7 +16,7 @@
 	<title>KB Subscribe</title>
 
 	<!-- Standard Favicon -->
-	<link rel="icon" type="image/x-icon" href="../images/favicon.svg"/>
+    <link rel="shortcut icon" href="/images/favicon.png">
 	
 	<!-- Library - Google Font Familys -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,7 +26,7 @@
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
-	
+				
 	<!-- Custom - Common CSS -->
     <meta name="robots" content="noindex">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
@@ -34,11 +34,15 @@
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">	
+    <link rel="stylesheet" type="text/css" href="/assets/css/subscribe.css" /> 
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+	<script src="/assets/js/modernizr-2.6.2.min.js"></script>
 </head>
 
 <style>
 body {
-    font-family: 'Roboto', 'sans-serif';
+    font-family: 'Lato', 'sans-serif';
 }
 
 li {
@@ -69,11 +73,11 @@ a:hover {
 }
 
 .btn1 {
-    background-color: #02133F;
+    background-color: #082972;
     color: #FFF;
 }
 .btn1:hover {
-    background-color: #02133F;
+    background-color: #051D51;
     color: #FFF;
 }
 .btn2 {
@@ -100,7 +104,7 @@ a:hover {
     font-weight: 900;
     align-items: center;
     justify-content: center;
-    background-color: #02133F;
+    background-color: #05112A;
     color: #FFF;
 }
 
@@ -173,7 +177,7 @@ footer {
 			<div class="container-fluid px-auto mx-auto menu-block" style="border-top: none">
 				<nav class="navbar ownavigation navbar-expand-lg">
 					<div class="d-flex col-lg-2" style="text-align: center; margin:auto;">
-						<a class="navbar-brand" style="font-size:0;" href="https://kootenaybiz.com/" title="Logo"><img class="col-md-12 col-12" src="images/kb-logo.png"></a>
+						<a class="navbar-brand" style="font-size:0;" href="https://kootenaybiz.com/" title="Logo"><img class="col-md-12 col-12" src="https://kootenaybiz.com/images/uploads/kb-logo-white.png"></a>
 					</div>					
 				</nav>	
 			</div><!-- Menu Block /- -->
@@ -185,12 +189,12 @@ footer {
 			<!-- Page Content -->
 			<div class="container-fluid px-0 page-content blog-single cover-fullwidth" style="padding-bottom: 0;">
 
-				<div class="jumbotron text-center py-5" style="background-image: url(images/subscribe-banner.png); height: 450px; border-radius: 0;">
+				<div class="jumbotron text-center py-5" style="background-image: url(https://kootenaybiz.com/images/uploads/subscribe-banner.png); height: 450px; border-radius: 0;">
 					<h1 class="display-4 text-white font-weight-bold col-12 col-md-6 mx-auto mt-4">Keep up-to-date with KootenayBiz</h1>
 					<p class="lead text-white col-12 col-md-6 mx-auto" style="line-height: 1.6; font-weight: bold;">Lorem ipsum dolor sit amet, consectetur adipiscing elitenean mollis dui quis lacus maximus, eget auctor nisl ullamcorper.</p>
 					<div class="row mx-auto text-center">
 						<div class="col-12 col-md-4 mx-auto text-center mb-5">
-							<a id="btn_submit" name="submit" style="width: 100%; font-size:18px;" href="#signup" class="submit py-2 my-0">Sign up for the FREE KootenayBiz newsletter</a>
+							<a name="signup" style="width: 100%; font-size:18px;" href="#signup" class="submit py-2 my-0">Sign up for the FREE KootenayBiz newsletter</a>
 						</div>
 					</div> 
 				</div>
@@ -216,7 +220,7 @@ footer {
 				<div class="container my-5 mx-auto px-0">
 					<div class="row mx-auto justify-content-center d-flex">
 						<div class="col-12 col-md-4 my-5">
-							<img  class="col-12 col-md-12" src="images/subscribe-image.png">
+							<img  class="col-12 col-md-12" src="https://kootenaybiz.com/images/uploads/subscribe-image.png">
 						</div>
 						<div class="col-12 col-md-4 my-5">
 							<h3 class="font-weight-bold my-3">TARGETTED TO YOU</h3>
@@ -238,57 +242,71 @@ footer {
 					<div class="contact-form col-12 col-md-8 mx-auto" style="background-color: #f7f7f7;">
 						<div class="row">
 							<div class="col-12 col-md-12 col-sm-6 mt-4 px-5">
-								<h3 class="entry-title-lg uppercase mb-1 mt-4 font-weight-bold text-center col-12 col-md-8 mx-auto" style="font-size: 30px;">THE PERFECT NEWSLETTER FOR KOOTENAY LOVERS</h3>
-								<form class="py-4">
+								<h3 class="entry-title-lg uppercase mb-3 mt-4 font-weight-bold text-center col-12 col-md-8 mx-auto" style="font-size: 30px;">THE PERFECT NEWSLETTER FOR KOOTENAY LOVERS</h3>
+								
+								<form class="js-cm-form py-2" id="subForm" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309E6A89DB47AA26B180880030F4F790C7ABE898E4051575FDE2D0EA75B161F5A9D9FA8BB49C8120472A139B0845B0E788B1">
 									<div class="row">
 										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="Your Name" name="contact-name" id="input_name" required>
+											<div><label>Name </label><input style="background-color: #FFF;" class="form-control" aria-label="Name" id="fieldName" maxlength="200" name="cm-name"></div>
 										</div>
 										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="Your Email" name="contact-email" id="input_email" required>
+											<div><label>Email </label><input style="background-color: #FFF;" autocomplete="Email" aria-label="Email" class="js-cm-email-input qa-input-email form-control" id="fieldEmail" maxlength="200" name="cm-muilhu-muilhu" required="" type="email"></div>
 										</div>
 									</div>
 									<div class="row">
 										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="What city do you live in?" name="contact-name" id="input_name" required>
+											<div><label>City </label><input style="background-color: #FFF;" class="form-control" aria-label="City" id="fieldoyutti" maxlength="200" name="cm-f-oyutti"></div>
 										</div>
 										<div class="form-group col-md-6">
-											<input type="text" style="background-color: #FFF;" class="form-control" placeholder="What’s your  postal code/zip code?" name="contact-name" id="input_name" required>
-										</div>
-										
+											<div><label>Postal </label><input style="background-color: #FFF;" class="form-control" aria-label="Postal" id="fieldoyuttd" maxlength="200" name="cm-f-oyuttd"></div>
+										</div>		
 									</div>
-									<div class="row mx-auto text-center">
+
+									<div class="row text-center">
+										<div class="form-check col-md-6 mx-auto">
+											<fieldset>
+												<label>Region (Choose one or both) </label>
+												<div class="row">
+													<div class="col-md-6"><input id="14660475" name="cm-fo-djhldddi" type="checkbox" value="14660475"><label class="ml-2" for="14660475">West Kootenay</label></div>
+													<div class="col-md-6"><input id="14660476" name="cm-fo-djhldddi" type="checkbox" value="14660476"><label class="ml-2" for="14660476">East Kootenay</label></div>
+												</div>
+											</fieldset>
+										</div>
+									</div>
+
+									<div class="row mt-2 text-center">
+										<div class="form-check col-md-6 mx-auto">
+											<div><input aria-required="" id="cm-privacy-consent" name="cm-privacy-consent" required="" type="checkbox"><label class="ml-2" for="cm-privacy-consent">I agree to be emailed</label></div>
+											<input id="cm-privacy-consent-hidden" name="cm-privacy-consent-hidden" type="hidden" value="true">
+										 </div>
+									</div>
+									<div class="row mx-auto text-center mt-3">
 										<div class="form-group col-md-6 mx-auto text-center">
-											<button id="btn_submit" name="submit" style="width: 100%;" class="submit py-2 my-0">Sign up to KootenayBiz</button>
+											<button type="submit"  style="width: 100%;" class="submit py-2 my-0">Sign up to KootenayBiz</button>
 										</div>
 									</div>
-									<div class="row mx-auto text-center d-flex justify-content-center mt-3">
-										<div class="form-check col-md-3">
-											<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											<label class="form-check-label" style="padding-left: 0;" for="flexCheckDefault">
-											East Kootenay
-											</label>
-										</div>
-										<div class="form-check col-md-3">
-											<input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-											<label class="form-check-label" style="padding-left: 0;" for="flexCheckDefault">
-											West Kootenay
-											</label>
-										</div>
+										<p class="text-center mt-2">I will never share your email address and you can unsubscribe in a single click.</p>
 									</div>
-										<p class="text-center mt-3">I will never share your email address and you can unsubscribe in a single click.</p>
-									</div>
+									<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
 								</form>
+
 							</div>
 						</div>
 					</div>
 				</div>
 				<!-- /Subscribe form -->
+
+
 				<div class="container my-5 mx-auto px-0">
 					<hr class="sectionDivider">
+					<div class="row mx-auto text-center col-12 col-md-10">
+						<div class="col-md-6 mx-auto text-center mb-3 mt-4"> 
+							<a class="btn btn-lg btn-block btn3" href="https://kootenaybiz.com/share">Share your story with KootenayBiz</a>
+						</div>
+					</div>
 					<div class="row mx-auto text-center col-12 col-md-8">
 						<div class="col-md-6 mx-auto text-center"> 
-							<a class="btn btn-lg btn-block btn3" href="https://kootenaybiz.com/share">Share your story</a>
+							<a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/enewsletterarchive">Read our past newsletters</a>
 						</div>
 						<div class="col-md-6 mx-auto text-center"> 
 							<a class="btn btn-lg btn-block btn1" href="https://kootenaybiz.com/communities">Communities</a>
@@ -319,15 +337,6 @@ footer {
 		<a href="https://kootenaybiz.com/" class="footerText">kootenaybiz.com</a>
 	</footer>
 	
-	<!-- JQuery v1.12.4 -->
-	<script src="../js/jquery-1.12.4.min.js"></script>
-
-	<!-- Library - Js -->
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/lib.js"></script>
-	
-	<!-- Library - Theme JS -->
-	<script src="../js/functions.js"></script>
-	
+    <script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>	
 </body>
 </html>

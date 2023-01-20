@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>Free Magazine Subscription | RVwest</title>
+		<meta name="description" content="Subscribe to RVwest, which is designed to keep RVers up to date with what’s happening in the world of RVing.">
+		
+		<link rel="shortcut icon" href="/images/favicon.png">
+		<link rel="stylesheet" type="text/css" href="/assets/css/subscribe.css" />
+		<link rel="stylesheet" type="text/css" href="{stylesheet='assets/master_css'}" />
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script src="/assets/js/modernizr-2.6.2.min.js"></script>
+
+		<!-- Google Analytics & Search Bar -->
+		{rv-google-analytics}
+		
+	</head>
+	<body>
+		{embed="assets/header"}
+
+		{embed="assets/nav"}
+
+		<section class="main">
+			<article>
+				{exp:channel:entries channel="landing_pages" entry_id="19982"}
+					<h1>{title}</h1>
+					<h2>{global_blurb}</h2>
+					
+						{global_photo search:position="<=0"}
+							<figure>
+								<img src="{photo}" alt="{alt}" />
+							</figure>
+						{/global_photo}
+						
+					<p>{global_body}</p>
+				{/exp:channel:entries}
+				
+				<div class="clearfix"></div>
+
+				<form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309E75650FAEA4D6E837D1EFCC858D20DCDF7021DF3C4DC8C0079D3D627A33D9CC9989767BE6855A43C61BC6C6259B6D7E49">	
+					<p>
+					    <label for="fieldName">Name</label>
+					    <br />
+					    <input id="fieldName" name="cm-name" type="text" />
+					</p>
+					<p>
+					    <label for="fieldEmail">Email</label>
+					    <br />
+					    <input id="fieldEmail" name="cm-clrklt-clrklt" type="email" class="js-cm-email-input"
+					    required />
+					</p>
+					<p>
+					    <label for="fieldojitih">Postal/Zip Code</label>
+					    <br />
+					    <input id="fieldojitih" name="cm-f-ojitih" type="text" />
+					</p>
+					<div>
+					    <input id="cm-privacy-consent" name="cm-privacy-consent" required type="checkbox"
+					    />
+					    <label for="cm-privacy-consent">I agree to be emailed</label>
+					    <input id="cm-privacy-consent-hidden" name="cm-privacy-consent-hidden"
+					    type="hidden" value="true" />
+					</div>
+					    <button type="submit" style="margin-top: 10px; float: left; width: 20%; border: 0; height: 30px; color: #fff; background: #88a825;">Subscribe</button>
+				</form>
+			</article>
+		</section>
+		
+		{embed="assets/sidebar"}
+		{embed="assets/footer"}
+
+		<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+	</body>
+</html>

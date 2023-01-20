@@ -1,0 +1,319 @@
+<?php
+
+// eNews Settings
+// Some things can be changed here one time and affect the whole newsletter. 
+
+$link_color = "#00456A";
+$font1 = "'Roboto Slab', Rockwell, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+$font2 = "'Lato', sans-serif";
+
+?>
+
+
+{exp:channel:entries channel="campaigns" disable="member_data|pagination|trackbacks" dynamic="off" entry_id="{segment_3}" show_future_entries="yes"}
+
+<!doctype html>
+<html>
+	<head>
+		<title>{title} | RidersWest</title>
+		<link rel="shortcut icon" href="/images/favicon.ico" />
+		<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+	</head>
+
+
+<body style="margin: 0;">
+
+<table width="728" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin: 10px 20px; background: #fff;">
+
+	<tr id="webversion"> 
+		<td>
+			<a href="{site_url}/{segment_1}/{segment_2}/{segment_3}" style="text-decoration: none; font-family: <?php echo $font1; ?>; color: rgba(0, 69, 106,.8); border: 1px solid rgba(0, 69, 106,.3); padding: 5px 10px; margin-bottom: 10px; margin-top: 5px; display: inline-block; font-size: 12px;">View web version of this email</a>
+		</td>
+	</tr>
+
+	{if newsletter_leaderboard}
+	<tr id="leaderboard"> 
+		<td>
+			<a href='http://accounts.kpimedia.com/click/{newsletter_leaderboard}/leaderboard' target='_blank' rel="nofollow">
+				<img src='http://accounts.kpimedia.com/deliver/{newsletter_leaderboard}/leaderboard?v=<?php echo sha1(rand(5, 15)); ?>' border='0' alt=''>
+			</a>
+		</td>
+	</tr>
+	{/if}
+
+	<tr id="header">
+		<td style="padding: 20px 0; border-bottom: 4px solid #f1f1f1;">
+			<table style="border-collapse: collapse; display: block;" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="310">
+					<a href="{site_url}" target=_blank">
+						<img src="{site_url}/images/newsletter/new/logo.png" width="260" style="display:block;" border="0" alt="RidersWest enewsletter" />
+					</a>
+				</td>
+				<td width="180" valign="top" align="right" style="padding-right: 15px;">
+					<table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+					<tr>
+						<td style="padding: 5px 5px 10px 0; text-align: right;">
+							<span style="color: #222; font-weight: 100;font-family: <?= $font1; ?>; font-size: 20px;">{entry_date format="%F %j, %Y"}</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: right;">
+							<a href="http://www.facebook.com/RidersWest" target="_blank" style="text-decoration: none;"><img src="{site_url}/images/newsletter/new/facebook.png" hspace="5" width="34" height="34" border="0" /></a>
+							<a href="http://twitter.com/riderswest" target="_blank" style="text-decoration: none;"><img src="{site_url}/images/newsletter/new/twitter.png" hspace="5" width="34" height="34" border="0" /></a>
+							<a href="https://www.instagram.com/riderswest.magazine/?hl=en" target="_blank" style="text-decoration: none;"><img src="/images/uploads/instagram2.png" hspace="5" width="34" height="34" border="0" /></a>
+						</td>	
+					</tr>
+					</table>
+				</td>
+
+				{!-- Current Issue --}
+								{embed="campaigns/current_issue" font1="<?=$font1;?>" font2="<?=$font2;?>" linkcolor="<?=$link_color;?>"}
+
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+
+	<tr id="content">
+		<td>
+			<table width="728" cellpadding="0" cellspacing="0" style="border-collapse: collapse; display: block; font-family: <?= $font1; ?>;">
+				<tr>
+					<td id="articles" width="408" valign="top">
+						<table width="408" cellpadding="0" cellspacing="0" style="border-collapse: collapse; display: block;">
+
+						{!-- Feature Articles --}
+
+						{exp:stash:set name="num_features"}{newsletter_features}{/exp:stash:set}
+		
+						{newsletter_articles show_future_entries="yes"}
+							{if "{count}" <= "{exp:stash:get name="num_features"}"}
+								<tr>
+									<td style="padding: 20px 0;">
+
+									{!-- Feature Image --}
+										<a href="{embed="campaigns/enews_link" id="{entry_id}"}" style="text-decoration: none;" target="_blank">
+											{photo search:position="0" limit="1"}
+												<img src="{photo}" alt="{alt}" width="408" border="0" style="display: block;">
+											{/photo}
+										</a>
+
+									</td>
+
+								</tr>
+
+								<tr>	
+									<td>
+									{!-- Feature Title --}
+									<a href="{embed="campaigns/enews_link" id="{entry_id}"}" style="text-decoration: none;" target="_blank">
+										<span style="font-family: <?= $font1; ?>; font-weight: 400; font-size: 22px; color:  <?php echo $link_color; ?>; text-decoration: none;">{title}</span>
+									</a>
+									</td>
+								</tr>
+
+
+								<tr>
+									<td style="padding: 15px 0;">
+										<p style="margin: 0;font-family: <?= $font2; ?>; font-size: 16px; color: #040400;">{if summary}{summary}{if:else}{meta_description}{/if}</p>
+									</td>
+								</tr>
+
+								<tr>
+									<td style="padding-bottom: 15px; border-bottom: 1px solid #efefef;">
+										<table width="150" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+										<tr>
+											<td style="padding: 5px 10px; background-color: #82C137; text-align:center;">
+												<a href="{embed="campaigns/enews_link" id="{entry_id}"}" target="_blank" style="text-decoration: none;">
+													<span style="color: #fff; font-family: <?= $font1; ?>; font-weight: 400; font-size: 14px;">Read full article</span>
+												</a>
+											</td>
+										</tr>
+										</table>
+									</td>
+								</tr>
+							{/if}
+						{/newsletter_articles}
+
+						<tr>
+							<td style="padding: 20px 0;">
+								<h3 style="font-family: <?= $font1; ?>; font-weight: 400;font-size: 22px; margin: 0;">Best of the Rest</h3>
+							</td>
+						</tr>
+
+						{!-- Best of the Rest --}
+						{embed="campaigns/list_articles" id="{segment_3}" offset="{exp:stash:get name="num_features"}" font="<?= $font1; ?>"}
+						</table>
+			
+
+<div>
+<h3>Share This Newsletter</h3>
+		<a href="http://www.facebook.com/sharer.php?u={site_url}/{segment_1}/{segment_2}/{segment_3}" {!-- id="shareBtn" --} class="facebook"><img src="http://www.rvwest.com/images/newsletter/new/facebook.png" hspace="5" width="32" height="32" border="0" /></a>
+		<a href="http://twitter.com/share?text=<?php echo urlencode('{title}'); ?>%20via%20%40rvwestmag"><img src="{site_url}/images/newsletter/new/twitter.png" hspace="5" width="32" height="32" border="0" /></a>
+		<a href="mailto:?body={title} {site_url}%2F{segment_1}%2F{segment_2}%2F{segment_3}"><img src="https://kootenaybiz.com//images/uploads/email_circle.png" hspace="5" width="32" height="32" border="0" /></a>
+<p> Did someone forward you this email? Subscribe <a href="{site_url}/subscribe/">here!</a>
+</div>
+
+
+					</td>
+
+					<td id="sidebar" width="300" valign="top" style="padding-left: 20px;">
+			
+						<table width="300" cellpadding="0" cellspacing="0" style="border-collapse: collapse; display: block;">
+
+							{newsletter_banners search:location="top"}
+								<tr class="banner_ad"> 
+									<td style="padding: 20px 0;">
+										<a href='http://accounts.kpimedia.com/click/{banner_id}/big-box' target='_blank' rel="nofollow">
+											<img src='http://accounts.kpimedia.com/deliver/{banner_id}/big-box?v=<?php echo sha1(rand(5, 15)); ?>' border='0' alt=''>
+										</a>
+									</td>
+
+								</tr>
+							{/newsletter_banners}
+
+							{!-- Columns --}
+							{if newsletter_columns}
+							<tr>
+								<td style="padding-bottom: 20px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; margin: 0; padding-bottom: 10px;">Columns</h2>
+								</td>
+							</tr>
+
+							{newsletter_columns}
+							{!-- Gets Column Name and Author --}
+							{embed="/campaigns/column_info" column="{channel_short_name}" font="<?= $font2; ?>"}
+
+							<tr>
+								<td style="font-family: <?= $font2; ?>; font-size: 14px; line-height: 1.5em;">
+									<a href="{embed="campaigns/enews_link" id="{entry_id}"}" style="text-decoration: none;" target="_blank">
+										<span style="display: block; font-weight: 700; text-transform: uppercase; font-size: 12px; color:  <?php echo $link_color; ?>;">{title}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>; font-size: 14px; line-height: 1.5em; padding-bottom: 15px;">				
+									<span style="margin: 0;">{summary}</span>
+								</td>
+							</tr>	
+							{/newsletter_columns}
+							{/if}
+
+							{!-- Events --}
+							<tr>
+								<td style="display: block; padding: 5px 0 15px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; padding-bottom: 10px; margin: 0; display: block;">Upcoming Events</h2>
+								</td>
+							</tr>
+
+							{newsletter_events show_future_entries="yes"}
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em">
+												
+									<a href="{site_url}/events/article/{url_title}" style="text-decoration: none;" target="_blank">
+										<span style="display: block; text-transform: uppercase; font-size: 12px; font-weight: 700; color:  <?php echo $link_color; ?>;">{title}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em;">				
+									<span color: #222;">{display_date}{start_date} {if end_date}- {end_date}{/if}{/display_date}</span>
+								</td>
+							</tr>
+			
+							<tr>
+								<td style="font-family: <?= $font2; ?>; padding-bottom: 15px;font-size: 14px; line-height: 1.5em;">	
+									<span style="margin: 0; color: #222;">{entry_location}</span>
+								</td>
+							</tr>						
+							{/newsletter_events}	
+
+							<tr>
+								<td style="padding-bottom: 15px;">
+									<table width="150" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+									<tr>
+										<td style="padding: 5px 10px; background-color: #3D92E3; text-align:center;">
+											<a href="{site_url}/events" target="_blank" style="text-decoration: none;">
+												<span style="color: #fff; font-family: <?= $font1; ?>; font-weight: 400; font-size: 14px;">View all events</span>
+											</a>
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							
+							{!-- Submit Forms --}
+							{if enewsletters_submit}
+							<tr>
+								<td style="display: block; padding: 5px 0 15px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; padding-bottom: 10px; margin: 0; display: block;">We would like to hear from you!</h2>
+								</td>
+							</tr>
+
+							{enewsletters_submit show_future_entries="yes" site="riderswest_new|snoriders"}
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em">		
+									<a href="{if channel_id == 365}http://snoriderswest.com{/if}/submit/{url_title}" style="text-decoration: none;" target="_blank">
+										<span style="display: block; text-transform: uppercase; font-size: 12px; font-weight: 700; color:  <?php echo $link_color; ?>;">{if headline}{headline}{if:else}{title}{/if}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>; font-size: 14px; line-height: 1.5em; padding-bottom: 15px;">				
+									<span style="margin: 0;">{meta_description}</span>
+								</td>
+							</tr>
+												
+							{/enewsletters_submit}	
+							{/if}
+
+
+							{newsletter_banners search:location="bottom"}
+								<tr class="banner_ad"> 
+									<td style="display: block; padding: 20px 0;">
+										<a href='http://accounts.kpimedia.com/click/{banner_id}/big-box' target='_blank' rel="nofollow">
+											<img src='http://accounts.kpimedia.com/deliver/{banner_id}/big-box?v=<?php echo sha1(rand(5, 15)); ?>' border='0' alt=''>
+										</a>
+									</td>
+								</tr>
+							{/newsletter_banners}
+
+							{embed="campaigns/hotshots" font1="<?= $font1; ?>" font2="<?= $font2; ?>" link_color="<?= $link_color; ?>"}
+									
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr> {!-- /content --}
+
+	{if newsletter_leaderboard_footer}
+	<tr id="leaderboard"> 
+		<td style="display: block; padding: 20px 0 40px;">
+			<a href='http://accounts.kpimedia.com/click/{newsletter_leaderboard_footer}/leaderboard' target='_blank' rel="nofollow">
+				<img src='http://accounts.kpimedia.com/deliver/{newsletter_leaderboard_footer}/leaderboard?v=<?php echo sha1(rand(5, 15)); ?>' border='0' width='720' alt=''>
+			</a>
+		</td>
+	</tr>
+	{/if}
+
+	<tr id="footer">
+		<td style="display:block; font-family: <?= $font2; ?>;color: #666666;font-size: 16px; border-top: 1px solid #efefef; padding-top: 20px; margin-top: 10px;">
+			<p style="font-style: italic; margin: 0;">This newsletter is designed to keep you informed about the latest in ATVing, motocross, motorcycling and other motorized sports. Thanks to you, RidersWest is one of Western Canada's leading magazines and websites among riders.</p>
+			<p>— Keith Powell, RidersWest publisher<br />
+			Suite 100, 100 - 7th Ave. S., Cranbrook, B.C. V1C 2J4</p>
+			<p style="font-size: 13px; margin-top: 30px;">To help us fulfill your request to receive information from <a href="{site_url}" style="text-decoration: none;" target="_blank"><span style="color:  <?php echo $link_color; ?>;">riderswestmag.com</span></a> via e-mail, please add <a href="mailto:distribution@kpimedia.com" style="text-decoration: none;" target="_blank"><span style="color:  <?php echo $link_color; ?>;">distribution@kpimedia.com</span></a> to your Address Book or Safe List. Not interested in receiving this newsletter anymore? Click <unsubscribe><span style="color:  <?php echo $link_color; ?>;">here</span></unsubscribe> to unsubscribe.</p>
+		</td>
+	</tr>
+
+
+</table>
+
+</body>
+</html>
+
+
+
+{/exp:channel:entries}
+

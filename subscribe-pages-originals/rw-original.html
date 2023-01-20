@@ -1,0 +1,84 @@
+{embed="includes/_header" entry_id="{embed:entry_id}"}
+	<section class="landing-main" id="main" role="main">
+		{exp:channel:entries url_title="{segment_1}"}
+			<article class="full-article clearfix">
+				<header>
+					<h1>{title}</h1>
+					{if subheadline}<p class="subheadline">{subheadline}</p>{/if}
+					<p>{if writer}by {embed="includes/_article_writer" writer="{writer}"} | {/if} </p> {!-- <time datetime="{entry_date format="%Y-%m-%d"}">{entry_date format="%F %Y"}</time></p> --}
+					{if segment_1 != "editorial"}
+						{if member_group == "1" OR member_group == "5" OR member_group == "11" OR member_group == "12"}<p>To also view the summary go to the <a href="/editorial/article/{url_title}">editorial version</a>.</p>{/if}
+					{if:else}
+						<div class="summary">
+							<p><b>Summary:</b> {summary}</p>
+						</div>
+					{/if}
+				</header>
+
+
+					<div class="article-photo">
+						<img src="{photo}{photo}{/photo}" style="margin-bottom:30px;">
+					</div>
+					<p>{body}</p>
+
+			<div class="clearfix"></div>
+					
+					
+				<form id="subForm" class="js-cm-form" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309E9312C4004E360B343C3DE3BA95C622154599744326550975293493EF333E52EAF0F8975A2F9C5518950789E8A0D2839F">	
+					<p>
+						<label for="fieldName">Name</label>
+						<br />
+						<input id="fieldName" name="cm-name" type="text" style="border-radius: 0px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    padding: 8px;
+    transition: none;
+    margin-bottom: 20px;" />
+					</p>
+					<p>
+						<label>Email</label>
+						<br />
+						<input autoComplete="Email" aria-label="Email" id="fieldEmail" maxLength="200" name="cm-clrhkd-clrhkd" required type="email" class="js-cm-email-input sc-iwsKbI iMsgpL" style="border-radius: 0px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    padding: 8px;
+    transition: none;
+    margin-bottom: 20px;" />
+					</p>
+					<p>
+						<label for="fieldojitih">City</label>
+						<br />
+						<input id="fieldojitih" name="cm-f-ojitlh" type="text" style="border-radius: 0px;
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: #fafafa;
+    padding: 8px;
+    transition: none;
+    margin-bottom: 20px;" />
+					</p>
+					<div>
+					    <input id="cm-privacy-consent" name="cm-privacy-consent" required type="checkbox"
+					    />
+					    <label for="cm-privacy-consent">I agree to be emailed</label>
+					    <input id="cm-privacy-consent-hidden" name="cm-privacy-consent-hidden"
+					    type="hidden" value="true" />
+					</div>
+					    <button type="submit" style="margin-top: 10px; float: left; width: 20%; border: 0; height: 30px; color: #fff; background: #23478F;">Subscribe</button>
+				</form>
+		
+
+			</article>
+		{/exp:channel:entries}
+	</section>
+	<section class="landing-sidebar" role="complementary">
+		{rw_share_photos}
+		{rw_sidebar_subscribe}
+		{rw_sidekick}
+		{rw_sidebar_events}
+		{rw_sidebar_contests}
+		{rw_quicklinks}
+		{rw_bigbox}
+		{embed="includes/_footer"}
+<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>

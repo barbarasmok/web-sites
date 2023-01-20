@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,900,900i&display=swap" rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>SnoRiders</title>
+    <title>RidersWest</title>
   </head>
 
 
@@ -54,7 +54,7 @@ a:hover {
     color: #FFF;
 }
 .btn2 {
-    background-color: #F71212;
+    background-color: #FF270A;
     color: #FFF;
 }
 .btn2:hover {
@@ -62,11 +62,11 @@ a:hover {
     color: #FFF;
 }
 .btn3 {
-    background-color: #F79B12;
+    background-color: #FFC000;
     color: #000;
 }
 .btn3:hover {
-    background-color: #E18A08;
+    background-color: #E6AE02;
     color: #000;
 }
 
@@ -94,13 +94,13 @@ footer {
     <!-- NAV -->
     <nav class="navbar navbar-light bg-light">
         <a class="navbar-brand" href="https://riderswestmag.com/">
-            <img src="images/icons/rw-logo.svg" class="align-top w-15 mr-2" alt=""><span class="font-weight-bold">RidersWest</span>&nbsp;&nbsp;&nbsp;<span class="subheadline">#riderswest</span>
+            <img src="http://riderswestmag.com/images/uploads/_thumbs/rw_icon.png" height="30px" class="align-top w-15 mr-2" alt=""><span class="font-weight-bold">RidersWest</span>&nbsp;&nbsp;&nbsp;<span class="subheadline">#riderswest</span>
         </a>    
     </nav> 
     <!-- /NAV -->
 
     <!-- Links -->
-    <div class="container my-5">
+       <div class="container my-5">
         <div class="row mx-auto text-center">
             <div class="col-md-6 mx-auto text-center"> 
                 <a class="btn btn-lg btn-block btn2" href="https://riderswestmag.com/subscribe">Sign up to the FREE RidersWest newsletter&nbsp;
@@ -110,46 +110,26 @@ footer {
         </div>
     </div>
 
-    <div class="container my-5 mx-auto">
+    <div class="container mt-5 mb-0 mx-auto">
         <div class="row mx-auto text-center d-flex justify-content-center">
-            <div class="col-12 col-md-4">
-                {if embed:city == "y"}
-                {/if}
-                {exp:channel:entries
-                    channel="{embed:stream_channels}"
-                    limit="3"
-                    orderby="date" dynamic="off" offset="1" sticky="no"
-                    {if embed:stream_categories}category="{embed:stream_categories}"{/if}
-                    {if embed:author_search}search:writer="{embed:author_search}"{/if}
-                    {if embed:limit}limit="{embed:limit}"{/if}
-                    {if embed:sticky == "n"}sticky="no" {/if}
-                    {if embed:current_id}entry_id="not {embed:current_id}"{/if}
-                    paginate="bottom"
-                    paginate_base="paginate/index"
-                    disable="member_data|trackbacks"}          
-                    <div class="my-2 item {if {rw_channel_conditionals_brag}}brag{if:elseif {rw_channel_conditionals_gear}}gear{if:elseif {rw_channel_conditionals_read}}read{if:elseif {rw_channel_conditionals_ride}}ride{/if}">
-                        {if landing_photo}
-                            {landing_photo search:position="0" limit="1"}{if thumb}
-                                <div class="graphic">
-                                    <a href="{rw_article_link}"><img src="{thumb}" class="w-75 mx-auto" alt="{alt}"></a>
-                                </div>
-                                {if:elseif photo}
-                                <div class="graphic">
-                                    <a href="{rw_article_link}"><img src="{photo}" alt="{alt}"></a>
-                                </div>
-                        {/if}{/landing_photo}
-                
-                        {if:elseif gearboxx_thumb}
-                            <div class="graphic">
-                                <a href="{rw_article_link}"><img src="{gearboxx_thumb}" alt="Thumbnail"></a>
+            <div class="col-12 col-md-6">
+            {exp:channel:entries channel="{embed:stream_channels}" {if embed:stream_categories}category="{embed:stream_categories}"{/if} {if embed:author_search}search:writer="{embed:author_search}"{/if} limit="2" {if embed:limit}limit="{embed:limit}"{/if} {if embed:sticky == "n"}sticky="no" {/if} dynamic="no" {if embed:current_id}entry_id="not {embed:current_id}"{/if}  paginate="bottom" disable="member_data|trackbacks"}
+                <article class="entry {if {rw_channel_conditionals_brag}}Share{if:elseif {rw_channel_conditionals_gear}}gear{if:elseif {rw_channel_conditionals_read}}read{if:elseif {rw_channel_conditionals_ride}}ride{/if}">
+                    {photo search:position="0" limit="1"}
+                        {if thumb}
+                            <div class="excerpt-thumb">
+                                <h2 style="margin-top: -0.1em"><a href="{rw_article_link}"><img style="width: 100%; margin-top: 20px;" src="{thumb}" alt="{alt}"></a></h2>
                             </div>
                         {/if}
-                        <div class="my-2 text">
-                            <span class="categories">{rw_categories}</span>
-                            <h2 style="font-size:24px; font-weight:900;" class="mt-2 mb-5"><a class="title" href="{rw_article_link}">{title}</a></h2>
-                        </div>
+                    {/photo}
+                    <div class="excerpt-text">
+                        <span class="categories">{rw_excerpt_tags}</span><br>
+                        <a class="title" style="font-size: 1.5rem; font-family: 'Lato', sans-serif; margin-top: 10px;" href="{rw_article_link}">{title}</a>
+                        <p style="color: rgb(136 135 135);">{summary}</p>
+                        {!-- <span class="pub-info" style="margin-bottom: 20px;"><time datetime="{entry_date format="%Y-%m-%d %H:%i"}">{entry_date format="%F %Y"}</time> --} <span class="pub-info"> {if writer} by {embed="includes/_article_writer" writer="{writer}"}{/if}</span>
                     </div>
-                {/exp:channel:entries}
+                </article>	
+            {/exp:channel:entries}
             </div>
         </div>
     </div>          
@@ -165,7 +145,6 @@ footer {
             </div>
         </div>
     </div>
-
 
 
     <!-- Footer -->

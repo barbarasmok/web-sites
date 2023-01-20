@@ -1,0 +1,105 @@
+<section class="sidebar">
+	{!-- {if "{embed:show_intro}" == "y"}
+		{embed="assets/landing-intro" url="{segment_1}"}
+	{/if} --}
+	
+	{if "{embed:nav}" != ""}
+		{embed="assets/{embed:nav}"}
+	{/if}
+	
+	{if landing_map}<img src="{landing_map}" alt="{segment_1_category_name} Map" class="landing-map">{/if}
+	
+	<div class="share">
+		{!-- <a class="share" href="/gallery/share">SHARE YOUR PHOTOS & WIN </a> --}
+		
+		{exp:channel:entries channel="rv_gear_guide" dynamic="off" limit="1"  disable="member_data|trackbacks|pagination|categories"}
+		{!--<p>We are giving away a prize from our <a href="/gear">RV Gear Guide</a> every month! Just <a href="/gallery/share">send us the best photo</a> from your RV adventures for a chance to win.</p>--}
+		
+		{!--{global_photo search:position="0" limit="1"}<a href="/gallery/share"><img src="{photo}" alt="{alt}" class="article-img"></a>{/global_photo}--}
+		
+	{/exp:channel:entries}
+	</div>
+
+	{if segment_1  != "gallery"}
+	{galleryshare_prize_sidebar}
+	{/if}
+
+
+	{!--Leave commented out until the campaign monitor issues are sorted out--}
+	
+    <div class="subscribe">
+
+		<span>SUBSCRIBE</span>
+		
+
+		<ul>
+			<li style="display:inline; margin-right: -0.5em;">
+				<a href="https://twitter.com/rvwestmag"><img src="/images/uploads/twitter111.png"></a>
+			</li>
+			<li style="display:inline; margin-right: -0.5em;">
+				<a href="https://www.facebook.com/rvwestmag/"><img src="/images/uploads/facebook111.png"></a>
+			</li>
+			<li style="display:inline; margin-right: -0.5em;">
+				<a href="https://www.pinterest.com/pin/313563192779480079/"><img src="/images/uploads/PinterestxD.png"></a>
+			</li>
+			<li style="display:inline; margin-right: -0.5em;">
+				<a href="http://www.linkedin.com/groups?gid=3833494&amp;trk=hb_side_g"><img src="/images/uploads/linked111.png"></a>
+			</li>
+		</ul>
+		
+		<p>Love RVwest? Keep up to date by subscribing:</p>
+		
+		<div>
+			<a class="ed" href="https://www.rvwest.com/subscribe">Subscribe</a>
+			<!--<a class="ed" href="/subscribe">Print Edition</a>-->
+		</div>
+	</div>
+	
+	{rv_admanager_sidekick}
+
+	<div class="events">
+		<a href="/events">EVENTS</a>
+
+		{exp:channel:entries channel="events" orderby="date" sort="asc" dynamic="off" start_on="{current_time}" show_future_entries="yes" show_expired="no" limit="3" disable="member_data|trackbacks|pagination|categories"}
+
+		<div class="event">
+			<a href="{url_title_path="article/events"}" class="title">{title}</a>
+			{if events_date}<span class="date">{events_date}</span>{/if}
+			{if events_location}<span class="loc">{events_location}</span>{/if}
+		
+		</div>
+
+		{/exp:channel:entries}
+
+		<a href="/events">View All Events</a>
+		
+	</div>
+
+	{exp:channel:entries channel="contest" dynamic="off" limit="2" disable="member_data|trackbacks|pagination|categories"}
+	{if count == 1}
+		<div class="contests">
+			<a href="/contest">CONTESTS</a>
+	{/if}
+			<div class="contest">
+				<a href="{if page_uri != ''}{page_uri}{if:else}{url_title_path="article/contest/"}{/if}" class="title">{title}</a>
+				{if profile_map}<p>{profile_map}</p>{/if}
+				{global_blurb}
+			</div>
+
+	{if count == total_results}
+			<a href="/contest">View All Contests</a>
+		</div>
+	{/if}
+	{/exp:channel:entries}
+
+	
+	{if "{embed:loc_type}" == "city"}
+		{rv_admanager_quicklink}
+	{if:else}
+		{rv_admanager_quicklinks}
+	{/if}
+
+	{rv_admanager_bigbox}
+
+
+</section>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+
+		<title>SnoRiders Magazine Subscription | SnoRiders</title>
+		<meta name="description" content="Subscribe to SnoRiders magazine for free, which is packed with snowmobiling destinations throughout Western Canada, new products for riders, stories and photos from sledders and much more.">
+		
+		<link rel="shortcut icon" href="/images/favicon.ico">
+		
+		<link rel="stylesheet" type="text/css" href="/assets/css/subscribe.css" /> 
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
+		<script src="/assets/js/modernizr-2.6.2.min.js"></script>
+		
+	</head>
+
+	<body>
+		{embed="includes/_header"}
+		<section id="main" class="landing-main" role="main">
+
+			<article>
+				{exp:channel:entries channel="static_pages" entry_id="20099"}
+					<h1 style="font-size:30px; padding-bottom:5px;"><strong>{title}</strong></h1>
+					<h2 style="margin-bottom:20px; font-size:18px; padding-top:0;">{article_blurb}</h2>
+			
+						{landing_photo search:position="<=0"}
+								<img src="{photo}" alt="{alt}" style="margin-bottom:30px;"/>
+						{/landing_photo}
+						
+					<p>{article_body}</p>
+				{/exp:channel:entries}
+				
+				<div class="clearfix"></div>
+
+				<form class="js-cm-form" id="subForm" style="margin-top:30px;" action="https://www.createsend.com/t/subscribeerror?description=" method="post" data-id="5B5E7037DA78A748374AD499497E309EFC3456BCD719323A1B6195F5E176DA9F8C588671947FA0241B6B34F3A634C85B3D9B47CB3BEFDA874283E1164D744600">
+					<p>
+						<label>Name</label>
+						<br />
+						<input aria-label="Name" id="fieldName" name="cm-name" type="text">
+					</p>
+					<p>
+						<label>Email</label>
+						<br />
+						<input aria-label="Email" class="js-cm-email-input" id="fieldEmail" maxlength="200" name="cm-clrklr-clrklr" required="" type="email">
+					</p>
+					<p>
+						<label for="fieldojitih">City</label>
+						<br />
+						<input id="fieldojitih" name="cm-f-ojitlh" type="text">
+					</p>
+					<div>
+						<input id="cm-privacy-consent" name="cm-privacy-consent" required type="checkbox"
+					    />
+					    <label for="cm-privacy-consent">I agree to be emailed</label>
+					    <input id="cm-privacy-consent-hidden" name="cm-privacy-consent-hidden"
+					    type="hidden" value="true" />
+					</div>
+
+					<button type="submit" style="margin-top: 10px; float: left; width: 20%; border: 0; height: 30px; color: #fff; background: #23478F;">Subscribe</button>
+				</form>
+			</article>
+		</section>
+
+		<section class="landing-sidebar" role="complementary">
+			 {!--{sledwrap_contest}--}
+			{!--{sr_sledtown_showdown}--}
+			{sr_share_photos}
+			{sr_hotshots_prize}
+			{sr_sidebar_subscribe}
+			{sr_sidekick}
+			{sr_sidebar_events}
+			{sr_sidebar_contests}
+			{sr_quicklinks}
+			{sr_bigbox}
+
+			{embed="includes/_footer"}
+
+			<script type="text/javascript" src="https://js.createsend1.com/javascript/copypastesubscribeformlogic.js"></script>
+	</body>
+</html>

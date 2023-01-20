@@ -1,0 +1,378 @@
+<?php
+
+// eNews Settings
+// Some things can be changed here one time and affect the whole newsletter. 
+
+$link_color = "#00456A";
+$font1 = "'Roboto Slab', Rockwell, 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif";
+$font2 = "'Lato', sans-serif";
+
+?>
+
+
+{exp:channel:entries channel="campaigns" disable="member_data|pagination|trackbacks" dynamic="off" entry_id="{segment_3}" show_future_entries="yes"}
+
+<!doctype html>
+<html>
+	<head>
+		<title>{title} | Online Snowmobiling Magazine</title>
+		<link rel="shortcut icon" href="/images/favicon.png">
+		<link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,300,700,100" rel="stylesheet" type="text/css">
+		<link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
+	</head>
+
+<body style="margin: 0;">
+
+<table width="728" cellpadding="0" cellspacing="0" style="border-collapse: collapse; margin: 10px 20px; background: #fff;">
+	
+	<tr id="webversion"> 
+		<td>
+			<a href="{site_url}/{segment_1}/{segment_2}/{segment_3}" style="text-decoration: none; font-family: <?php echo $font1; ?>; color: rgba(0, 69, 106,.8); border: 1px solid rgba(0, 69, 106,.3); padding: 5px 10px; margin-bottom: 10px; margin-top: 5px; display: inline-block; font-size: 12px;">View web version of this email</a>
+		</td>
+	</tr>
+	
+	{if newsletter_leaderboard}
+	<tr id="leaderboard"> 
+		<td>
+			<a href='http://accounts.kpimedia.com/click/{newsletter_leaderboard}/leaderboard' target='_blank' rel="nofollow">
+				<img src='http://accounts.kpimedia.com/deliver/{newsletter_leaderboard}/leaderboard?v=<?php echo sha1(rand(5, 15)); ?>' border='0' alt=''>
+			</a>
+		</td>
+	</tr>
+	{/if}
+
+	<tr id="header">
+		<td style="padding: 20px 0; border-bottom: 4px solid #f1f1f1;">
+			<table style="border-collapse: collapse; display: block;" cellpadding="0" cellspacing="0">
+			<tr>
+				<td width="310">
+					<a href="{site_url}" target=_blank">
+						<img src="{site_url}/images/newsletter/new/logo.png" width="260" style="display:block;" border="0" alt="SnoRiders West Logo" />
+					</a>
+				</td>
+				<td width="180" valign="top" align="right" style="padding-right: 15px;">
+					<table cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+					<tr>
+						<td style="padding: 5px 5px 10px 0; text-align: right;">
+							<span style="color: #222; font-weight: 100;font-family: <?= $font1; ?>; font-size: 20px;">{entry_date format="%F %j, %Y"}</span>
+						</td>
+					</tr>
+					<tr>
+						<td style="text-align: right;">
+							<a href="https://www.facebook.com/snoridersmag" target="_blank" style="text-decoration: none;"><img src="{site_url}/images/newsletter/new/facebook.png" hspace="5" width="34" height="34" border="0" /></a>
+							<a href="http://twitter.com/snoriders" target="_blank" style="text-decoration: none;"><img src="{site_url}/images/newsletter/new/twitter.png" hspace="5" width="34" height="34" border="0" /></a>
+							<a href="https://www.instagram.com/snoriders.west/" target="_blank" style="text-decoration: none;"><img src="/images/uploads/instagram-logo-round.gif" hspace="5" width="34" height="34" border="0" /></a>
+						</td>	
+					</tr>
+					</table>
+				</td>
+
+				{!-- Update Digital Issue --}
+				{embed="campaigns/current_issue" font1="<?php echo $font1; ?>" font2="<?php echo $font2; ?>" linkcolor="<?php echo $link_color; ?>"}
+			</tr>
+			</table>
+		</td>
+	</tr>
+
+	<tr id="content">
+		<td>
+			<table width="728" cellpadding="0" cellspacing="0" style="border-collapse: collapse; display: block; font-family: <?= $font1; ?>;">
+				<tr>
+					<td id="articles" width="408" valign="top">
+						<table width="408" cellpadding="0" cellspacing="0" style="border-collapse: collapse; display: block;">
+
+						{!-- Feature Articles --}
+
+						{exp:stash:set name="num_features"}{newsletter_feature_articles}{/exp:stash:set}
+		
+						{newsletter_articles show_future_entries="yes"}
+							{if "{count}" <= "{exp:stash:get name="num_features"}"}
+								<tr>
+									<td style="padding: 20px 0;">
+
+									{!-- Feature Image --}
+										<a href="{sr_enews_link}" style="text-decoration: none;" target="_blank">
+											{landing_photo search:position="0" limit="1"}
+												<img src="{photo}" alt="{photo_alt}" width="408" border="0" style="display: block;">
+											{/landing_photo}
+										</a>
+
+									</td>
+
+								</tr>
+
+								<tr>	
+									<td>
+		
+									{!-- Feature Title --}
+									<a href="{sr_enews_link}" style="text-decoration: none;" target="_blank">
+										<span style="font-family: <?= $font1; ?>; font-weight: 400; font-size: 22px; color:  <?php echo $link_color; ?>; text-decoration: none;">{title}</span>
+									</a>
+									
+									</td>
+
+								</tr>
+
+
+								<tr>
+					
+									<td style="padding: 15px 0;">
+
+									<p style="margin: 0;font-family: <?= $font2; ?>; font-size: 16px; color: #040400;">{meta_description}</p>
+
+									</td>
+
+								</tr>
+
+								<tr>
+			
+									<td style="padding-bottom: 15px; border-bottom: 1px solid #efefef;">
+										<a href="{sr_enews_link}" target="_blank" style="text-decoration: none;">
+										<table width="130" cellspacing="0" cellpadding="0" style="border-collapse: collapse; display: inline-block;">
+										<tr>
+											<td style="padding: 7px 10px; background-color: #82C137; text-align:center;">
+												<span style="color: #fff; font-family: <?= $font1; ?>; font-weight: 400; font-size: 14px;">Read full article</span>
+											</td>
+										</tr>
+										</table>
+										</a>
+									</td>
+								</tr>
+							{/if}
+						{/newsletter_articles}
+
+					
+						{!-- SR Destinations --}
+						{if destination_articles}
+						<tr>
+							<td style="padding: 10px 0;">
+								<h3 style="font-family: <?= $font1; ?>; font-weight: 400;font-size: 22px; margin: 0;">Destination Hotspots</h3>
+							</td>
+						</tr>
+
+						{destination_articles}		
+							{embed="/campaigns/dest_articles" entry_id="{entry_id}" font1="<?= $font1; ?>"  font2="<?= $font2; ?>"}
+						{/destination_articles}
+						{/if}
+
+						{!-- SR Best of the Rest --}
+						<tr>
+							<td style="padding: 10px 0;">
+								<h3 style="font-family: <?= $font1; ?>; font-weight: 400;font-size: 22px; margin: 0;">Best of the Rest</h3>
+							</td>
+						</tr>
+						{embed="campaigns/list_articles" id="{segment_3}" offset="{exp:stash:get name="num_features"}" font="<?= $font1; ?>"}
+
+
+
+						</table>
+		
+<div>
+<h3>Share This Newsletter</h3>
+		<a href="http://www.facebook.com/sharer.php?u={site_url}/{segment_1}/{segment_2}/{segment_3}" {!-- id="shareBtn" --} class="facebook"><img src="http://www.rvwest.com/images/newsletter/new/facebook.png" hspace="5" width="32" height="32" border="0" /></a>
+		<a href="http://twitter.com/share?text=<?php echo urlencode('{title}'); ?>%20via%20%40rvwestmag"><img src="{site_url}/images/newsletter/new/twitter.png" hspace="5" width="32" height="32" border="0" /></a>
+		<a href="mailto:?body={title} {site_url}%2F{segment_1}%2F{segment_2}%2F{segment_3}"><img src="http://www.sharesansar.com/wp-content/themes/sharesansar/img/share_icon/new/email_circle.png" hspace="5" width="32" height="32" border="0" /></a>
+<p> Did someone forward you this email? Subscribe <a href="{site_url}/subscribe/">here!</a>
+</div>
+					</td>
+
+					<td id="sidebar" width="300" valign="top" style="padding-left: 20px;">
+			
+						<table width="300" cellpadding="0" cellspacing="0" style="border-collapse: collapse; display: block;">
+
+							{newsletter_banners search:location="top"}
+								<tr class="banner_ad"> 
+									<td style="padding: 20px 0;">
+										<a href='http://accounts.kpimedia.com/click/{banner_id}/big-box' target='_blank' rel="nofollow">
+											<img src='http://accounts.kpimedia.com/deliver/{banner_id}/big-box?v=<?php echo sha1(rand(5, 15)); ?>' border='0' alt=''>
+										</a>
+									</td>
+
+								</tr>
+							{/newsletter_banners}
+
+							{!-- Columns --}
+							{if newsletter_columns}
+							<tr>
+								<td style="padding-bottom: 20px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; margin: 0; padding-bottom: 10px;">Columns</h2>
+								</td>
+							</tr>
+
+							{newsletter_columns}
+							{!-- Gets Column Name and Author --}
+							{embed="/includes/_column_info" column="{channel_short_name}" font="<?= $font2; ?>" writer="{writer}"}
+
+							<tr>
+								<td style="font-family: <?= $font2; ?>; font-size: 14px; line-height: 1.5em;">
+									<a href="{sr_enews_link}" style="text-decoration: none;" target="_blank">
+										<span style="display: block; font-weight: 700; text-transform: uppercase; font-size: 12px; color:  <?php echo $link_color; ?>;">{title}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>; font-size: 14px; line-height: 1.5em; padding-bottom: 15px;">				
+									<span>{meta_description}</span>
+								</td>
+							</tr>	
+							{/newsletter_columns}
+							{/if}
+							
+							{!-- Contests --}
+							{if newsletter_contests}
+							<tr>
+								<td style="display: block; padding: 5px 0 15px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; padding-bottom: 10px; margin: 0; display: block;">Contests</h2>
+								</td>
+							</tr>
+
+							{newsletter_contests show_future_entries="yes"}
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em">
+												
+									<a href="{if page_uri}{page_uri}{if:else}{url_title_path='/contests/article/'}{/if}" style="text-decoration: none;" target="_blank">
+										<span style="display: block; font-weight: 700; text-transform: uppercase; font-size: 12px; color:  <?php echo $link_color; ?>;">{title}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em; padding-bottom: 15px">				
+									<span style="color: #222;">{article_subheadline}</span>
+								</td>
+							</tr>
+									
+							{/newsletter_contests}	
+
+							<tr>
+								<td style="padding-bottom: 15px;">
+									<table width="140" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+									<tr>
+										<td style="padding: 5px 10px; background-color: #3D92E3; text-align:center;">
+											<a href="{site_url}/contests" target="_blank" style="text-decoration: none;">
+												<span style="color: #fff; font-family: <?= $font1; ?>; font-weight: 400; font-size: 14px;">View all contests</span>
+											</a>
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+							{/if}
+							{!-- End Contests --}
+
+							{!-- Events --}
+							{if newsletter_events}
+							<tr>
+								<td style="display: block; padding: 5px 0 15px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; padding-bottom: 10px; margin: 0; display: block;">Upcoming Events</h2>
+								</td>
+							</tr>
+
+
+							{newsletter_events show_future_entries="yes"}
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em">
+												
+									<a href="{sr_enews_link}" style="text-decoration: none;" target="_blank">
+										<span style="display: block; font-weight: 700; text-transform: uppercase; font-size: 12px; color:  <?php echo $link_color; ?>;">{title}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em;">				
+									<span style="color: #222;">{events_date}</span>
+								</td>
+							</tr>
+			
+							<tr>
+								<td style="font-family: <?= $font2; ?>; padding-bottom: 15px;font-size: 14px; line-height: 1.5em;">	
+									<span style="color: #222;">{events_location}</span>
+								</td>
+							</tr>						
+							{/newsletter_events}	
+
+
+							<tr>
+								<td style="padding-bottom: 15px;">
+									<table width="125" cellspacing="0" cellpadding="0" style="border-collapse: collapse;">
+									<tr>
+										<td style="padding: 5px 10px; background-color: #3D92E3; text-align:center;">
+											<a href="{site_url}/events" target="_blank" style="text-decoration: none;">
+												<span style="color: #fff; font-family: <?= $font1; ?>; font-weight: 400; font-size: 14px;">View all events</span>
+											</a>
+										</td>
+									</tr>
+									</table>
+								</td>
+							</tr>
+
+							{/if}
+
+							{!-- Submit Forms --}
+							{if sr_newsletter_submit}
+							<tr>
+								<td style="display: block; padding: 5px 0 15px;">
+									<h2 style="font-family: <?= $font1; ?>; font-size: 20px; font-weight: 300; color: #222222; border-bottom: 2px solid #999999; padding-bottom: 10px; margin: 0; display: block;">We would like to hear from you!</h2>
+								</td>
+							</tr>
+
+							{sr_newsletter_submit show_future_entries="yes" site="snoriders|riderswest_new"}
+							<tr>
+								<td style="font-family: <?= $font2; ?>;font-size: 14px; line-height: 1.5em">
+									<a href="{site_url}/submit/{url_title}" style="text-decoration: none;" target="_blank">
+<span style="display: block; text-transform: uppercase; font-size: 12px; font-weight: 700; color: <?= $link_color; ?>;">{title}</span>
+									</a>
+								</td>
+							</tr>
+							<tr>
+								<td style="font-family: <?= $font2; ?>; font-size: 14px; line-height: 1.5em; padding-bottom: 15px;">				
+									<span style="margin: 0;">{meta_description}</span>
+								</td>
+							</tr>
+												
+							{/sr_newsletter_submit}
+							{/if}
+
+							{newsletter_banners search:location="bottom"}
+								<tr class="banner_ad"> 
+									<td style="padding: 20px 0;">
+										<a href='http://accounts.kpimedia.com/click/{banner_id}/big-box' target='_blank' rel="nofollow">
+											<img src='http://accounts.kpimedia.com/deliver/{banner_id}/big-box?v=<?php echo sha1(rand(5, 15)); ?>' border='0' alt=''>
+										</a>
+									</td>
+								</tr>
+							{/newsletter_banners}
+
+							{embed="campaigns/hotshots" font1="<?= $font1; ?>" font2="<?= $font2; ?>" link_color="<?= $link_color; ?>"}
+									
+						</table>
+					</td>
+				</tr>
+			</table>
+		</td>
+	</tr> {!-- /content --}
+
+	{if leaderboard_footer}
+	<tr id="leaderboard"> 
+		<td style="display: block; padding: 20px 0;">
+			<a href='http://accounts.kpimedia.com/click/{leaderboard_footer}/leaderboard' target='_blank' rel="nofollow">
+				<img src='http://accounts.kpimedia.com/deliver/{leaderboard_footer}/leaderboard?v=<?php echo sha1(rand(5, 15)); ?>' border='0' width='720' alt=''>
+			</a>
+		</td>
+	</tr>
+	{/if}
+
+	<tr id="footer">
+		<td style="display:block; font-family: <?= $font2; ?>;color: #666666;font-size: 16px; border-top: 1px solid #efefef; padding-top: 20px; margin-top: 10px;">
+			<p style="font-style: italic; margin: 0;">Keep in mind this newsletter is designed to keep you informed about the latest in snowmobiling. Thanks to you, SnoRiders is pleased to be one of Western Canada’s leading snowmobiling and website publishers.</p>
+			<p>— Keith Powell, SnoRiders publisher<br />
+			Suite 100, 100 - 7th Ave. S., Cranbrook, B.C. V1C 2J4</p>
+			<p style="font-size: 13px; margin-top: 30px;">To help us fulfill your request to receive information from <a href="{site_url}" style="text-decoration: none;" target="_blank"><span style="color:  <?php echo $link_color; ?>;">snoriderswest.com</span></a> via e-mail, please add <a href="mailto:distribution@kpimedia.com" style="text-decoration: none;" target="_blank"><span style="color:  <?php echo $link_color; ?>;">distribution@kpimedia.com</span></a> to your Address Book or Safe List. Not interested in receiving this newsletter anymore? Click <unsubscribe><span style="color:  <?php echo $link_color; ?>;">here</span></unsubscribe> to unsubscribe.</p>
+		</td>
+	</tr>
+
+
+</table>
+
+</body>
+</html>
+{/exp:channel:entries}

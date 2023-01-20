@@ -1,0 +1,76 @@
+<h2>Subscribe to Kootenay Business:</h2>
+
+<div class="text">
+
+	<label for="email">Subscribe to our free email newsletter</label>
+						
+</div>
+
+<div class="magazinelinks">
+	<a href="https://kootenaybiz.com/subscribe"><i class="digital"></i></a>
+</div><br>
+
+{!--{exp:freeform:form
+   collection="Stand Alone Newsletter - KootenayBiz"
+   required="email"
+   return="thankyou/enewsletter"
+   form:id="kb-enews"
+   template="newsletter"
+   notify="ty.manning@kpimedia.com"
+ }
+
+{exp:subscriber:form form_id="2"}
+
+<div class="text">
+
+	<label for="email">Subscribe to our free email newsletter</label>
+	<a href="/subscribe/enewsletter" class="full">Learn more</a>
+						
+	<p>Which version would you like to receive?</p>
+	<div class="checkoption">
+		<input type="checkbox" name="east_kootenay" value="yes" class="ek"><span>East&nbsp;Kootenay</span>
+	</div>
+	<div class="checkoption">
+		<input type="checkbox" name="west_kootenay" value="yes" class="wk"><span>West Kootenay</span>
+	</div>
+						
+</div>
+
+<div class="fields">
+
+	<input type="text" name="email" id="email" class="email" placeholder="Your Email Address" />
+	<input type="text" name="full_name" class="fname" placeholder="First Name" />
+	<input type="hidden" name="site" value="KB" />
+	<input type="hidden" name="site_name" value="Kootenay Business" />
+	<input type="hidden" name="originating_source" value="Online Form (Sidebar)" />
+	<input type="hidden" name="newsletter" value="yes" />
+
+	<button type="submit" class="submit"> Subscribe </button>
+	
+</div>
+
+{/exp:freeform:form}
+
+<script>
+	
+	$("#kb-enews").submit(function(e) {
+		
+		$("span.error").remove();
+		var email = $("form#kb-enews div.fields #email")[0].value;
+		var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    var valid = re.test(email);
+		
+		if (valid === false) {
+			$(".subscribe #email").focus();
+			e.preventDefault();
+			$(".fields").append("<span class='error'>Please enter a valid email address</span>");
+		}
+		
+		else if (!($("input[type='radio'].ek")[0].checked || $("input[type='radio'].wk")[0].checked)) {
+			e.preventDefault();
+			$(".fields").append("<span class='error'>Please select which newsletter version you would like to receive</span>");
+		}
+			
+	});
+	
+</script>--}
